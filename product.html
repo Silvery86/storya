@@ -3,13 +3,441 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product — STYORA</title>
-  <meta name="description" content="View product details, specifications, and 360° product view. Premium performance sportswear.">
+  <title>Vortex Shell Jacket — STYORA</title>
+  <meta name="description" content="Vortex Shell waterproof jacket. Premium performance outerwear with advanced weather protection. Engineered for athletes.">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Vortex Shell Jacket — STYORA">
+  <meta property="og:description" content="Vortex Shell waterproof jacket. Premium performance outerwear with advanced weather protection.">
+  <meta property="og:url" content="https://styora.netlify.app/product.html?id=vortex-shell">
+  <meta property="og:image" content="https://styora.netlify.app/products/vortex-shell.jpg">
+  <meta property="og:site_name" content="STYORA">
+  <meta property="product:price:amount" content="245.00">
+  <meta property="product:price:currency" content="USD">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vortex Shell Jacket — STYORA">
+  <meta name="twitter:description" content="Premium performance outerwear with advanced weather protection.">
+  <meta name="twitter:image" content="https://styora.netlify.app/products/vortex-shell.jpg">
+  
+  <!-- JSON-LD Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Vortex Shell Jacket",
+    "image": [
+      "https://styora.netlify.app/products/vortex-shell.jpg"
+    ],
+    "description": "Vortex Shell waterproof jacket with advanced weather protection and breathable fabric. Engineered for performance in any conditions.",
+    "sku": "STYORA-VORTEX-SHELL",
+    "brand": {
+      "@type": "Brand",
+      "name": "STYORA"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://styora.netlify.app/product.html?id=vortex-shell",
+      "priceCurrency": "USD",
+      "price": "245.00",
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127"
+    }
+  }
+  </script>
+  
   <link rel="stylesheet" href="/src/styles/main.scss">
 </head>
 <body>
-  <h1>Product</h1>
-  <p>Product page coming soon...</p>
+  <!-- Skip to content link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <a href="/" class="header__logo" aria-label="STYORA Home">
+          <span class="header__logo-text">STYORA</span>
+        </a>
+        
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+            <span class="nav__toggle-icon"></span>
+          </button>
+          
+          <ul class="nav__menu" id="nav-menu">
+            <li class="nav__item"><a href="/collection.html?category=tops" class="nav__link">Tops</a></li>
+            <li class="nav__item"><a href="/collection.html?category=bottoms" class="nav__link">Bottoms</a></li>
+            <li class="nav__item"><a href="/collection.html?category=outerwear" class="nav__link">Outerwear</a></li>
+            <li class="nav__item"><a href="/collection.html?category=shoes" class="nav__link">Shoes</a></li>
+            <li class="nav__item"><a href="/collection.html?category=accessories" class="nav__link">Accessories</a></li>
+          </ul>
+        </nav>
+        
+        <a href="#" class="header__cart" aria-label="Shopping cart (0 items)">
+          <svg class="header__cart-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M9 2L7 6H3C2.45 6 2 6.45 2 7V19C2 19.55 2.45 20 3 20H21C21.55 20 22 19.55 22 19V7C22 6.45 21.55 6 21 6H17L15 2H9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="header__cart-count" aria-label="items in cart">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    <div class="container">
+      <div class="product">
+        
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+            <li class="breadcrumb__item"><a href="/collection.html" class="breadcrumb__link">Collection</a></li>
+            <li class="breadcrumb__item"><a href="/collection.html?category=outerwear" class="breadcrumb__link">Outerwear</a></li>
+            <li class="breadcrumb__item" aria-current="page">Vortex Shell</li>
+          </ol>
+        </nav>
+        
+        <div class="product__layout">
+          
+          <!-- Product Gallery -->
+          <div class="product__gallery">
+            <!-- 360° Viewer -->
+            <div class="viewer360" id="viewer360" role="img" aria-label="360° product view of Vortex Shell jacket. Use arrow keys or drag to rotate.">
+              <div class="viewer360__container">
+                <img 
+                  src="/src/assets/images/products/vortex-shell/frame-01.jpg" 
+                  alt="Vortex Shell jacket view" 
+                  class="viewer360__image"
+                  id="viewer360-image"
+                >
+                <div class="viewer360__controls" aria-hidden="true">
+                  <button class="viewer360__button" data-action="rotate-left" aria-label="Rotate left">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                  </button>
+                  <button class="viewer360__button" data-action="rotate-right" aria-label="Rotate right">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                  </button>
+                </div>
+                <p class="viewer360__hint">Drag to rotate · Arrow keys supported</p>
+              </div>
+            </div>
+            
+            <!-- Thumbnail Gallery -->
+            <div class="thumbnails" role="tablist" aria-label="Product images">
+              <button class="thumbnail thumbnail--active" role="tab" aria-selected="true" aria-controls="viewer360" data-frame="01">
+                <img src="/src/assets/images/products/vortex-shell/thumb-01.jpg" alt="Front view" class="thumbnail__image">
+              </button>
+              <button class="thumbnail" role="tab" aria-selected="false" aria-controls="viewer360" data-frame="09">
+                <img src="/src/assets/images/products/vortex-shell/thumb-09.jpg" alt="Side view" class="thumbnail__image">
+              </button>
+              <button class="thumbnail" role="tab" aria-selected="false" aria-controls="viewer360" data-frame="17">
+                <img src="/src/assets/images/products/vortex-shell/thumb-17.jpg" alt="Back view" class="thumbnail__image">
+              </button>
+              <button class="thumbnail" role="tab" aria-selected="false" aria-controls="viewer360" data-frame="25">
+                <img src="/src/assets/images/products/vortex-shell/thumb-25.jpg" alt="Detail view" class="thumbnail__image">
+              </button>
+            </div>
+          </div>
+          
+          <!-- Product Info -->
+          <div class="product__info">
+            <header class="product__header">
+              <h1 class="product__title">Vortex Shell</h1>
+              <p class="product__category">Outerwear</p>
+              
+              <!-- Rating -->
+              <div class="product__rating">
+                <div class="rating" role="img" aria-label="Rated 4.8 out of 5 stars">
+                  <svg class="rating__stars" width="120" height="24" viewBox="0 0 120 24" aria-hidden="true">
+                    <use href="#star-filled" x="0"/>
+                    <use href="#star-filled" x="24"/>
+                    <use href="#star-filled" x="48"/>
+                    <use href="#star-filled" x="72"/>
+                    <use href="#star-partial" x="96"/>
+                  </svg>
+                  <svg style="display:none">
+                    <symbol id="star-filled" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </symbol>
+                    <symbol id="star-partial" viewBox="0 0 24 24">
+                      <defs>
+                        <linearGradient id="half">
+                          <stop offset="50%" stop-color="currentColor"/>
+                          <stop offset="50%" stop-color="#2a2a2d" stop-opacity="1"/>
+                        </linearGradient>
+                      </defs>
+                      <path fill="url(#half)" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <a href="#reviews" class="product__reviews-link">127 reviews</a>
+              </div>
+              
+              <!-- Price -->
+              <p class="product__price">$245</p>
+            </header>
+            
+            <!-- Variant Pickers -->
+            <div class="product__variants">
+              <!-- Color Picker -->
+              <div class="variant-picker">
+                <h2 class="variant-picker__label">Color: <span class="variant-picker__value">Volt Black</span></h2>
+                <div class="variant-picker__options" role="radiogroup" aria-labelledby="color-label">
+                  <label class="color-swatch color-swatch--selected">
+                    <input type="radio" name="color" value="volt-black" checked aria-label="Volt Black">
+                    <span class="color-swatch__visual" style="background: linear-gradient(135deg, #ccff00 0%, #0a0a0b 100%)"></span>
+                  </label>
+                  <label class="color-swatch">
+                    <input type="radio" name="color" value="pure-white" aria-label="Pure White">
+                    <span class="color-swatch__visual" style="background: #f5f5f5"></span>
+                  </label>
+                  <label class="color-swatch">
+                    <input type="radio" name="color" value="electric-blue" aria-label="Electric Blue">
+                    <span class="color-swatch__visual" style="background: #2e6bff"></span>
+                  </label>
+                </div>
+              </div>
+              
+              <!-- Size Picker -->
+              <div class="variant-picker">
+                <h2 class="variant-picker__label">Size: <a href="#size-guide" class="variant-picker__guide">Size Guide</a></h2>
+                <div class="variant-picker__options" role="radiogroup" aria-labelledby="size-label">
+                  <label class="size-chip">
+                    <input type="radio" name="size" value="xs" aria-label="Size XS">
+                    <span class="size-chip__label">XS</span>
+                  </label>
+                  <label class="size-chip">
+                    <input type="radio" name="size" value="s" aria-label="Size S">
+                    <span class="size-chip__label">S</span>
+                  </label>
+                  <label class="size-chip size-chip--selected">
+                    <input type="radio" name="size" value="m" checked aria-label="Size M">
+                    <span class="size-chip__label">M</span>
+                  </label>
+                  <label class="size-chip">
+                    <input type="radio" name="size" value="l" aria-label="Size L">
+                    <span class="size-chip__label">L</span>
+                  </label>
+                  <label class="size-chip">
+                    <input type="radio" name="size" value="xl" aria-label="Size XL">
+                    <span class="size-chip__label">XL</span>
+                  </label>
+                  <label class="size-chip">
+                    <input type="radio" name="size" value="xxl" aria-label="Size XXL">
+                    <span class="size-chip__label">XXL</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Add to Cart -->
+            <button class="button button--primary button--large product__add-to-cart" type="button">
+              Add to Cart — $245
+            </button>
+            
+            <!-- Accordion Details -->
+            <div class="accordion" id="product-details">
+              <!-- Description -->
+              <div class="accordion__item">
+                <h3 class="accordion__heading">
+                  <button class="accordion__trigger" aria-expanded="true" aria-controls="description-panel" id="description-trigger">
+                    <span>Description</span>
+                    <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </button>
+                </h3>
+                <div class="accordion__panel" id="description-panel" role="region" aria-labelledby="description-trigger">
+                  <div class="accordion__content">
+                    <p>The Vortex Shell is engineered for athletes who refuse to let weather slow them down. Our advanced 3-layer waterproof fabric keeps you dry while maintaining breathability during intense activity.</p>
+                    <ul>
+                      <li>3-layer waterproof protection (20,000mm)</li>
+                      <li>Laser-perforated ventilation zones</li>
+                      <li>Adjustable hood with peripheral vision</li>
+                      <li>Reflective details for low-light visibility</li>
+                      <li>Packable into chest pocket</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Sizing -->
+              <div class="accordion__item">
+                <h3 class="accordion__heading">
+                  <button class="accordion__trigger" aria-expanded="false" aria-controls="sizing-panel" id="sizing-trigger">
+                    <span>Sizing & Fit</span>
+                    <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </button>
+                </h3>
+                <div class="accordion__panel" id="sizing-panel" role="region" aria-labelledby="sizing-trigger" hidden>
+                  <div class="accordion__content">
+                    <p>Athletic fit designed to layer over base and mid layers.</p>
+                    <p><strong>Model is 6'1" / 185cm, wearing size M</strong></p>
+                    <ul>
+                      <li>XS: Chest 34-36"</li>
+                      <li>S: Chest 36-38"</li>
+                      <li>M: Chest 38-40"</li>
+                      <li>L: Chest 40-42"</li>
+                      <li>XL: Chest 42-44"</li>
+                      <li>XXL: Chest 44-46"</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Shipping -->
+              <div class="accordion__item">
+                <h3 class="accordion__heading">
+                  <button class="accordion__trigger" aria-expanded="false" aria-controls="shipping-panel" id="shipping-trigger">
+                    <span>Shipping & Returns</span>
+                    <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </button>
+                </h3>
+                <div class="accordion__panel" id="shipping-panel" role="region" aria-labelledby="shipping-trigger" hidden>
+                  <div class="accordion__content">
+                    <p><strong>Free shipping on orders over $100</strong></p>
+                    <p>Standard shipping: 3-5 business days</p>
+                    <p>Express shipping: 1-2 business days</p>
+                    <p>Free returns within 60 days. Item must be unworn with tags attached.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Care -->
+              <div class="accordion__item">
+                <h3 class="accordion__heading">
+                  <button class="accordion__trigger" aria-expanded="false" aria-controls="care-panel" id="care-trigger">
+                    <span>Care Instructions</span>
+                    <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </button>
+                </h3>
+                <div class="accordion__panel" id="care-panel" role="region" aria-labelledby="care-trigger" hidden>
+                  <div class="accordion__content">
+                    <ul>
+                      <li>Machine wash cold on gentle cycle</li>
+                      <li>Do not bleach or use fabric softener</li>
+                      <li>Tumble dry low or hang dry</li>
+                      <li>Do not iron</li>
+                      <li>Do not dry clean</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </main>
+  
+  <!-- Sticky Add to Cart (Mobile) -->
+  <div class="sticky-cart" hidden>
+    <div class="container">
+      <div class="sticky-cart__inner">
+        <div class="sticky-cart__info">
+          <p class="sticky-cart__title">Vortex Shell</p>
+          <p class="sticky-cart__price">$245</p>
+        </div>
+        <button class="button button--primary sticky-cart__button" type="button">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo" aria-label="STYORA Home">
+            <span class="footer__logo-text">STYORA</span>
+          </a>
+          <p class="footer__tagline">Performance sportswear engineered for athletes.</p>
+        </div>
+        
+        <div class="footer__section">
+          <h3 class="footer__heading">Shop</h3>
+          <ul class="footer__links">
+            <li><a href="/collection.html?category=tops" class="footer__link">Tops</a></li>
+            <li><a href="/collection.html?category=bottoms" class="footer__link">Bottoms</a></li>
+            <li><a href="/collection.html?category=outerwear" class="footer__link">Outerwear</a></li>
+            <li><a href="/collection.html?category=shoes" class="footer__link">Shoes</a></li>
+            <li><a href="/collection.html?category=accessories" class="footer__link">Accessories</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__section">
+          <h3 class="footer__heading">Support</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Contact Us</a></li>
+            <li><a href="#" class="footer__link">Shipping & Returns</a></li>
+            <li><a href="#" class="footer__link">Size Guide</a></li>
+            <li><a href="#" class="footer__link">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__section">
+          <h3 class="footer__heading">Company</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">About</a></li>
+            <li><a href="#" class="footer__link">Athletes</a></li>
+            <li><a href="#" class="footer__link">Sustainability</a></li>
+            <li><a href="#" class="footer__link">Careers</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__section">
+          <h3 class="footer__heading">Follow</h3>
+          <ul class="footer__social">
+            <li>
+              <a href="https://instagram.com/styora" class="footer__social-link" aria-label="Follow us on Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/styora" class="footer__social-link" aria-label="Follow us on Twitter">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 STYORA. All rights reserved.</p>
+        <ul class="footer__legal">
+          <li><a href="#" class="footer__legal-link">Privacy Policy</a></li>
+          <li><a href="#" class="footer__legal-link">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
   
   <script type="module" src="/src/js/main.js"></script>
 </body>
