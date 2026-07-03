@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": "aero-knit",
+      "name": "Aero Knit",
+      "category": "Tops",
+      "price": 89,
+      "image": "/src/assets/images/products/aero-knit.png",
+      "description": "Lightweight performance tee with moisture-wicking technology"
+    },
+    {
+      "id": "kinetic-compression",
+      "name": "Kinetic Compression",
+      "category": "Tops",
+      "price": 95,
+      "image": "/src/assets/images/products/kinetic-compression.png",
+      "description": "Compression top for enhanced muscle support"
+    },
+    {
+      "id": "volt-singlet",
+      "name": "Volt Singlet",
+      "category": "Tops",
+      "price": 65,
+      "image": "/src/assets/images/products/volt-singlet.png",
+      "description": "Ultra-light running singlet for maximum breathability"
+    }
+  ]
+}

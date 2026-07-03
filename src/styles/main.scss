@@ -1,0 +1,27 @@
+// Main Sass entry point
+// Forwards all partials in the correct order
+
+// 1. Abstracts (variables, mixins, functions) — no output
+@forward 'abstracts/variables';
+@forward 'abstracts/mixins';
+@forward 'abstracts/functions';
+
+// 2. Base (reset, typography, global)
+@forward 'base/reset';
+@forward 'base/typography';
+@forward 'base/global';
+
+// 3. Layout (header, footer, container)
+@forward 'layout/header';
+@forward 'layout/footer';
+@forward 'layout/container';
+
+// 4. Components (BEM blocks)
+// @forward 'components/button';
+// @forward 'components/product-card';
+// ... more as we build
+
+// 5. Pages (page-specific styles)
+// @forward 'pages/home';
+// @forward 'pages/collection';
+// @forward 'pages/product';
