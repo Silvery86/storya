@@ -1,0 +1,264 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#353436",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1c1b1c",
+                        "inverse-primary": "#506600",
+                        "surface-container": "#201f20",
+                        "surface-container-highest": "#353436",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "tertiary-container": "#e2e2e2",
+                        "outline": "#8e9379",
+                        "outline-variant": "#444933",
+                        "on-surface-variant": "#c4c9ac",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-primary-fixed": "#161e00",
+                        "on-primary-container": "#556d00",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#b5c4ff",
+                        "on-secondary-container": "#d8dfff",
+                        "primary-fixed": "#c3f400",
+                        "on-tertiary-container": "#636565",
+                        "on-secondary-fixed-variant": "#003dab",
+                        "on-error": "#690005",
+                        "surface-container-high": "#2a2a2b",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "inverse-surface": "#e5e2e3",
+                        "on-primary": "#283500",
+                        "on-secondary": "#00297a",
+                        "inverse-on-surface": "#313031",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-background": "#e5e2e3",
+                        "tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary": "#ffffff",
+                        "on-tertiary": "#2f3131",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "surface": "#131314",
+                        "primary-fixed-dim": "#abd600",
+                        "on-secondary-fixed": "#00174d",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a393a",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-container": "#c3f400",
+                        "surface-tint": "#abd600",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-dim": "#131314",
+                        "secondary-container": "#0056ea",
+                        "secondary": "#b5c4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1440px",
+                        "section-gap": "120px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "display-xl": ["Anton"],
+                        "headline-lg": ["Anton"],
+                        "display-lg": ["Anton"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "stats-md": ["Anton"],
+                        "headline-lg-mobile": ["Anton"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-xl": ["96px", { "lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "60px", "letterSpacing": "-0.03em", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "stats-md": ["24px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script></head><body class="bg-background text-on-surface font-body-md min-h-screen selection:bg-primary-fixed selection:text-background">
+<!-- Top Navigation (Shell suppressed as per rules since it's a PDP, but adding a simple back nav for contextual logic) -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md hairline-border-bottom">
+<div class="flex justify-between items-center px-margin-mobile py-4 w-full">
+<button class="text-on-surface hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 400;" data-original-icon="arrow_back">arrow_back</span>
+</button>
+<div class="font-display-lg text-display-lg text-primary-fixed tracking-tighter" style="font-size: 24px; line-height: 24px;">STYORA</div>
+<button class="text-on-surface hover:text-primary-fixed transition-colors relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 400;">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary-fixed text-background font-label-caps text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</header>
+<main class="pt-16">
+<!-- Product Viewer Section -->
+<section class="relative w-full aspect-[3/4] bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="A highly detailed, cinematic photograph of a futuristic athletic jacket in dark charcoal with neon volt green accents. The jacket is displayed on a minimal, invisible mannequin against a deep black studio background. Lighting is dramatic, with edge lighting highlighting the technical fabric textures, waterproof zippers, and aerodynamic seams. The overall aesthetic is premium, high-octane performance sportswear, echoing cinematic tech-wear and athletic luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUfnDSLFm2v4tDnge1-hjhjB7ns4RrPtkY3xOMwUqe0pjLwXs4X46Jnki0VX4JsxnZLoQ-FSKiE8SLos8zEI2UQJ43OOM5AM1GgFRLg-1Fir9nEKDjjDs7mx-3eBDAV5crUhDqBeLy2JuyIk5yvnCJsBsBW7QrixZQZC6Aebq4SotfdcLXIId6dDFcel8UGEjxcL-mZEBjVIJ9AI4p58rGdLa1Y7_1b1c1GRvhqeStKQNSVHMpyX3op8fmLijKA_kB1Y77Tjkl198">
+<!-- 360 Indicator -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+<div class="flex gap-1">
+<div class="w-8 h-1 bg-primary-fixed rounded-full"></div>
+<div class="w-2 h-1 bg-surface-variant rounded-full"></div>
+<div class="w-2 h-1 bg-surface-variant rounded-full"></div>
+<div class="w-2 h-1 bg-surface-variant rounded-full"></div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">360</span>
+                    DRAG TO ROTATE
+                </span>
+</div>
+<!-- Badges -->
+<div class="absolute top-4 left-margin-mobile flex flex-col gap-2">
+<span class="px-3 py-1 hairline-border rounded-full font-label-caps text-label-caps bg-background/50 backdrop-blur-sm text-primary-fixed uppercase">New Arrival</span>
+</div>
+</section>
+<!-- Product Info Section -->
+<section class="px-margin-mobile py-8 flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface uppercase tracking-tight">AERO SHELL JACKET</h1>
+<div class="flex items-end justify-between">
+<span class="font-stats-md text-stats-md text-primary-fixed">$245.00</span>
+<div class="flex items-center gap-1">
+<div class="flex text-primary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400; font-size: 16px;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400; font-size: 16px;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400; font-size: 16px;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400; font-size: 16px;">star</span>
+<span class="material-symbols-outlined text-surface-variant" style="font-variation-settings: 'FILL' 1, 'wght' 400; font-size: 16px;">star_half</span>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">(124 Reviews)</span>
+</div>
+</div>
+</div>
+<!-- Color Selection -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Color</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase">Obsidian / Volt</span>
+</div>
+<div class="flex gap-3">
+<button class="w-12 h-12 rounded-full border-2 border-primary-fixed p-1 bg-surface-container relative">
+<div class="w-full h-full rounded-full bg-[#1A1A1A]"></div>
+</button>
+<button class="w-12 h-12 rounded-full border border-surface-variant p-1 bg-surface-container relative hover:border-on-surface transition-colors">
+<div class="w-full h-full rounded-full bg-[#F5F5F5]"></div>
+</button>
+<button class="w-12 h-12 rounded-full border border-surface-variant p-1 bg-surface-container relative hover:border-on-surface transition-colors">
+<div class="w-full h-full rounded-full bg-[#506600]"></div>
+</button>
+</div>
+</div>
+<!-- Size Selection -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Size</span>
+<button class="font-label-caps text-label-caps text-primary-fixed uppercase underline underline-offset-4 decoration-primary-fixed/50 hover:decoration-primary-fixed transition-colors">Size Guide</button>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-3 rounded-lg bg-surface-container hairline-border font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-bright transition-colors uppercase">S</button>
+<button class="py-3 rounded-lg bg-surface-container hairline-border font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-bright transition-colors uppercase">M</button>
+<button class="py-3 rounded-lg bg-primary-fixed text-background font-label-caps text-label-caps uppercase glow-active">L</button>
+<button class="py-3 rounded-lg bg-surface-container hairline-border font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-bright transition-colors uppercase relative overflow-hidden group">
+<span class="relative z-10 group-hover:opacity-50">XL</span>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-[120%] h-[1px] bg-surface-variant rotate-45"></div>
+</div>
+</button>
+</div>
+</div>
+<!-- Accordions -->
+<div class="mt-4 flex flex-col hairline-border-bottom">
+<!-- Description -->
+<details class="group py-4 hairline-border-bottom border-t border-white/10" open="">
+<summary class="flex justify-between items-center cursor-pointer list-none font-label-caps text-label-caps uppercase text-on-surface">
+                        Product Details
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant">
+<p class="mb-4">Engineered for high-velocity movement in unpredictable conditions. The Aero Shell Jacket utilizes our proprietary dynamic stretch membrane to provide total wind and water resistance without compromising breathability or mobility.</p>
+<ul class="flex flex-col gap-2">
+<li class="flex items-start gap-2">
+<span class="w-1 h-1 bg-primary-fixed rounded-full mt-2"></span>
+<span class="">10k/10k Waterproof &amp; Breathability rating</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1 h-1 bg-primary-fixed rounded-full mt-2"></span>
+<span class="">Articulated sleeves for kinetic freedom</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1 h-1 bg-primary-fixed rounded-full mt-2"></span>
+<span class="">Laser-cut ventilation nodes</span>
+</li>
+</ul>
+</div>
+</details>
+<!-- Shipping -->
+<details class="group py-4">
+<summary class="flex justify-between items-center cursor-pointer list-none font-label-caps text-label-caps uppercase text-on-surface">
+                        Shipping &amp; Returns
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant">
+<p class="">Free standard shipping on orders over $150. Expedited shipping options available at checkout. 30-day return policy for unwashed, unworn gear.</p>
+</div>
+</details>
+</div>
+</section>
+<div class="bg-background border-t border-white/10 px-margin-mobile py-8">
+  <div class="flex items-center justify-between gap-4">
+    <div class="flex flex-col">
+      <span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Total Price</span>
+      <span class="font-stats-md text-stats-md text-on-surface">$245.00</span>
+    </div>
+    <button class="flex-1 bg-primary-fixed text-background font-headline-lg-mobile text-[18px] py-4 rounded-lg uppercase tracking-tight shadow-[0_0_20px_rgba(195,244,0,0.2)] active:scale-[0.98] transition-transform">
+      Add to Cart
+    </button>
+  </div>
+</div><section class="px-margin-mobile py-8 mt-4">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface uppercase tracking-tighter mb-6">COMPLETE THE LOOK</h2>
+<div class="grid grid-cols-1 gap-4 pb-4">
+<!-- Card 1: Aero Tights -->
+<div class="flex-shrink-0 group relative bg-surface-container rounded-[16px] hairline-border overflow-hidden transition-all duration-300">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="STYORA Aero Tights" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLv-l0-HBOuVi0CRSDnk9-CsvNCgrkY-U3Us3PzkLqeIscmRjfbuBbuBWOt1uie-iSrTEgrq1ZZFn6oaZKSYHh-ky5a3oqI2LqlrQWpdBYpsm_S9TcZ24q8A28-gCOD3fhDlm4cSy9sVyh9qVwhV2PWhtyOBJcKJNbAavL6SRGDZyODk7xqfMLFjimfd2J41WXlpbfqBQJuFPz0dpqiuDkSKA1OuktUJLcO8j7wTavLbQ6SrJzQ4ui2Smbg">
+</div>
+<div class="p-4 flex justify-between items-end">
+<div>
+<h3 class="font-headline-lg-mobile text-[20px] text-on-surface uppercase tracking-tighter">AERO TIGHTS</h3>
+<p class="font-stats-md text-[18px] text-primary-fixed mt-1">$85.00</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary-fixed text-background flex items-center justify-center shadow-[0_0_15px_rgba(195,244,0,0.3)]">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Kinetic Compression -->
+<div class="flex-shrink-0 group relative bg-surface-container rounded-[16px] hairline-border overflow-hidden transition-all duration-300">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Kinetic Compression" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLux0cx9rObL5xjh5YhGU88Jna2XGg57clT-alsxwswBnkC85_uPbsy1ynH36CPuwwB81mMfDZOx_BQFMldBDaQsbu2VtHWFAccAyAhsH4xJSDrmYX3B3ppXU6F3GOoXyzhuKxdMcUiNhpZdLlxfXJRtJfELFm1poY1iwGtSY6raZJIpEzxBbe-sw73ok-OvL-tDeNsTGis6KBlK98gvz2mzrx6yU80STkfNEwbhIKifadenpiyby1J5iQ">
+</div>
+<div class="p-4 flex justify-between items-end">
+<div>
+<h3 class="font-headline-lg-mobile text-[20px] text-on-surface uppercase tracking-tighter">KINETIC COMPRESSION</h3>
+<p class="font-stats-md text-[18px] text-primary-fixed mt-1">$160.00</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary-fixed text-background flex items-center justify-center shadow-[0_0_15px_rgba(195,244,0,0.3)]">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Volt Singlet -->
+</div></section></main></body></html>

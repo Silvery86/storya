@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STYORA - Homepage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e3",
+                        "inverse-primary": "#506600",
+                        "on-primary": "#283500",
+                        "on-background": "#e5e2e3",
+                        "primary": "#ffffff",
+                        "background": "#0A0A0B",
+                        "outline": "#8e9379",
+                        "surface-variant": "#353436",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#00174d",
+                        "surface-tint": "#abd600",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "surface-container-high": "#2a2a2b",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#313031",
+                        "on-secondary-container": "#d8dfff",
+                        "surface": "#141417",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-dim": "#131314",
+                        "secondary-fixed-dim": "#b5c4ff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary": "#b5c4ff",
+                        "on-surface-variant": "#c4c9ac",
+                        "on-tertiary-container": "#636565",
+                        "tertiary": "#ffffff",
+                        "on-tertiary": "#2f3131",
+                        "tertiary-container": "#e2e2e2",
+                        "secondary-container": "#0056ea",
+                        "surface-container-low": "#1c1b1c",
+                        "primary-fixed": "#CCFF00", // Volt
+                        "on-primary-container": "#556d00",
+                        "primary-container": "#c3f400",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#00297a",
+                        "surface-container": "#201f20",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#003dab",
+                        "secondary-fixed": "#dbe1ff",
+                        "surface-bright": "#3a393a",
+                        "outline-variant": "rgba(255,255,255,0.1)", // Hairline
+                        "on-primary-fixed": "#0A0A0B",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "primary-fixed-dim": "#abd600"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "16px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Anton"],
+                        "body-lg": ["Inter"],
+                        "display-xl": ["Anton"],
+                        "headline-lg": ["Anton"],
+                        "stats-md": ["Anton"],
+                        "display-lg": ["Anton"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "display-xl": ["96px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "stats-md": ["24px", {"lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "60px", "letterSpacing": "-0.03em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    },
+                    "boxShadow": {
+                        "volt-glow": "0 0 40px rgba(204, 255, 0, 0.2)",
+                        "volt-glow-hover": "0 0 60px rgba(204, 255, 0, 0.4)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0B;
+            color: #e5e2e3;
+        }
+        
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .floating-card {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+        }
+
+        .floating-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 0 60px rgba(204, 255, 0, 0.3);
+            border-color: rgba(204, 255, 0, 0.5);
+        }
+        
+        .input-glow:focus {
+            border-color: #CCFF00;
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.3);
+            outline: none;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-lg">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<!-- Logo -->
+<a class="font-display-lg text-display-lg text-primary-fixed tracking-tighter" href="#">STYORA</a>
+<!-- Desktop Nav -->
+<ul class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Men</a></li>
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Women</a></li>
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Shoes</a></li>
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Sale</a></li>
+</ul>
+<!-- Actions -->
+<div class="flex items-center gap-4 text-primary-fixed">
+<button aria-label="Search" class="hover:bg-surface-variant/50 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button aria-label="Cart" class="hover:bg-surface-variant/50 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-20">
+<!-- Hero Section -->
+<section class="relative w-full h-[819px] min-h-[600px] flex items-center justify-center overflow-hidden border-b border-outline-variant">
+<!-- Background Image Placeholder (representing the 3D scene) -->
+<div class="absolute inset-0 z-0 bg-surface/50">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity" data-alt="Cinematic 3D render of a high-performance running shoe floating in mid-air alongside an athlete in dynamic forward motion. The scene is enveloped in deep obsidian darkness with aggressive high-contrast lighting. Striking, intense 'Volt' neon yellow (#CCFF00) lasers and kinetic energy trails slice through the dark background, emphasizing speed, precision, and elite athletic technology." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqGLgL71vhv5sOFyrSloSoDLiO1zRjWoXwziMM6XRcDuMvrtKq5n414sTXOcvCGlH9hbrc1iO3HKnxdSrmZB-tDKFFr9NaIt_CB3sED8WQdl6KhGKumD_v4P_csTyYVgYXfjK7d7LZ08gaeesZ_eF_y035IJrEwXxehXzxK1CMBnvW_MlKQk609P2jKU4km-CyEXO1sLfdgrTXjL2obHy995fjRpSwIcDoePv__92o8g0D3-ngL9eYcsNLq133dR42AUUyiYKneZs')"></div>
+<!-- Gradient overlay for depth -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background/50"></div>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center px-margin-mobile md:px-margin-desktop w-full max-w-container-max">
+<h1 class="font-display-xl text-[64px] md:text-display-xl text-primary tracking-tighter uppercase mb-6 drop-shadow-2xl mix-blend-plus-lighter" style="text-shadow: 0 4px 24px rgba(0,0,0,0.8);">
+                    MOVE FASTER
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8">
+                    Engineered for elite performance. Experience the cutting edge of sport-technology with the new kinetic series.
+                </p>
+<button class="bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps px-8 py-4 rounded-none hover:bg-primary-fixed-dim transition-all shadow-volt-glow hover:shadow-volt-glow-hover flex items-center gap-2 uppercase tracking-widest">
+                    SHOP NOW <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Marquee Strip -->
+<div class="w-full bg-primary-fixed text-on-primary-fixed py-4 border-y border-outline-variant marquee-container font-stats-md text-stats-md uppercase tracking-wider">
+<div class="marquee-content flex gap-12">
+<span>STYORA PERFORMANCE</span>
+<span class="opacity-50">•</span>
+<span>MOVE BEYOND</span>
+<span class="opacity-50">•</span>
+<span>ENGINEERED FOR SPEED</span>
+<span class="opacity-50">•</span>
+<span>STYORA PERFORMANCE</span>
+<span class="opacity-50">•</span>
+<span>MOVE BEYOND</span>
+<span class="opacity-50">•</span>
+<span>ENGINEERED FOR SPEED</span>
+</div>
+<!-- Duplicate for seamless loop -->
+<div class="marquee-content flex gap-12 ml-12">
+<span>STYORA PERFORMANCE</span>
+<span class="opacity-50">•</span>
+<span>MOVE BEYOND</span>
+<span class="opacity-50">•</span>
+<span>ENGINEERED FOR SPEED</span>
+<span class="opacity-50">•</span>
+<span>STYORA PERFORMANCE</span>
+<span class="opacity-50">•</span>
+<span>MOVE BEYOND</span>
+<span class="opacity-50">•</span>
+<span>ENGINEERED FOR SPEED</span>
+</div>
+</div>
+<!-- Featured Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12 border-b border-outline-variant pb-4">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase tracking-tight">Elite Gear</h2>
+<a class="font-label-caps text-label-caps text-primary-fixed hover:text-primary transition-colors flex items-center gap-1" href="#">
+                    VIEW ALL <span class="material-symbols-outlined" style="font-size: 14px;">east</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="floating-card bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-volt-glow group flex flex-col">
+<div class="relative h-[300px] w-full bg-surface-container-highest overflow-hidden">
+<img alt="Vortex Shell" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 scale-100 group-hover:scale-105" data-alt="Vortex Shell premium performance running jacket" src="https://lh3.googleusercontent.com/aida/AP1WRLsdgiwCQ65iYmBi3cLjKZljtU0Pgh1egsxo8GeK8x2ujN2IjAGgmZ5rFUUPbzHlRe8k1YDiFmlp7qgtT8c16uwjchHPJGfagvih23L3D1PiTk3M13ByJvp5eD1Zyi7gxEDslwjVAe3eDDgPIJJks0r8T1jyub8H2Q-q4jViNN-_tbfcQEiBSLkml65NetVzvMUNkv0__P7UPoe_i19dg1_9nzuZiKWDGowl68bya1GRganSdBMJZScxGQ"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur-sm border border-outline-variant px-2 py-1 rounded-full font-label-caps text-[10px] text-primary">NEW</div>
+</div>
+<div class="p-6 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg text-primary mb-1">Vortex Shell</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2 mb-4">Premium performance running jacket for elemental protection.</p>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-stats-md text-stats-md text-primary-fixed">$145</span>
+<button aria-label="Add to cart" class="text-on-surface-variant hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="floating-card bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-volt-glow group flex flex-col">
+<div class="relative h-[300px] w-full bg-surface-container-highest overflow-hidden">
+<img alt="Aero Tights" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 scale-100 group-hover:scale-105" data-alt="Aero Tights premium compression tights" src="https://lh3.googleusercontent.com/aida/AP1WRLv-l0-HBOuVi0CRSDnk9-CsvNCgrkY-U3Us3PzkLqeIscmRjfbuBbuBWOt1uie-iSrTEgrq1ZZFn6oaZKSYHh-ky5a3oqI2LqlrQWpdBYpsm_S9TcZ24q8A28-gCOD3fhDlm4cSy9sVyh9qVwhV2PWhtyOBJcKJNbAavL6SRGDZyODk7xqfMLFjimfd2J41WXlpbfqBQJuFPz0dpqiuDkSKA1OuktUJLcO8j7wTavLbQ6SrJzQ4ui2Smbg"/>
+</div>
+<div class="p-6 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg text-primary mb-1">Aero Tights</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2 mb-4">Targeted muscle support for explosive movements.</p>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-stats-md text-stats-md text-primary-fixed">$110</span>
+<button aria-label="Add to cart" class="text-on-surface-variant hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="floating-card bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-volt-glow group flex flex-col">
+<div class="relative h-[300px] w-full bg-surface-container-highest overflow-hidden">
+<img alt="Strata Wind" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 scale-100 group-hover:scale-105" data-alt="Strata Wind ultralight running gilet" src="https://lh3.googleusercontent.com/aida/AP1WRLsx9ilYlvTzKD15aWzsvMNnJAXpwLZgIT3yE6aXU8TtzvY1kvAUvswdVbf0jXzEWodD9rYBX2T9xCaSfQbZzWevp2J9Dyf_Tx2gf63FuSGk9pWT27oWEz4xuoK4hCuDa1mPV4ojCZ00p-AjS33Yw10CgQHAYkQbCS9-X9zRLVs4tUXCySts7P_-SoKLWzbYj26MIsN28A5c5BTFrzS86GiCxHy3zdkRW2z7rD3gan645kt87DE6gPbaSt4"/>
+</div>
+<div class="p-6 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg text-primary mb-1">Strata Wind</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2 mb-4">Featherweight protection against harsh elements.</p>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-stats-md text-stats-md text-primary-fixed">$130</span>
+<button aria-label="Add to cart" class="text-on-surface-variant hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="floating-card bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-volt-glow group flex flex-col">
+<div class="relative h-[300px] w-full bg-surface-container-highest overflow-hidden">
+<img alt="Kinetic Carbon R1" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 scale-100 group-hover:scale-105" data-alt="Kinetic Carbon R1 elite marathon running shoe" src="https://lh3.googleusercontent.com/aida/AP1WRLve4pD0kDTA31bwpVztoeM11nXXlMShcUdGpAyhd3n8KjidMkmOPCRQxrKjrlbS3kvLydsejRnUu2RqMq9OdkzvN__sQ_06O-1nIPyFYdjCEixw9OCCfVIHz1Mv4kuAq7xfJUiY0kPI_CEYFoQwnXRoxokbZascXHaplNoDpyY8PAQiKm1HvWB1Gvnoq8gJ-gvpPAUEc3DVEIN1U3onyF27zphFNIP_YrSUuiYfoD5HL6fIiuwAPqACGg"/>
+</div>
+<div class="p-6 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg text-primary mb-1">Kinetic Carbon R1</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2 mb-4">Propulsion-engineered midsole for maximum energy return.</p>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-stats-md text-stats-md text-primary-fixed">$250</span>
+<button aria-label="Add to cart" class="text-on-surface-variant hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Story Band Section -->
+<section class="py-section-gap relative overflow-hidden bg-surface border-y border-outline-variant">
+<!-- Background Texture -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1">
+<h2 class="font-display-lg text-[48px] md:text-display-lg text-primary uppercase leading-none mb-6">
+                        0.01s <br/><span class="text-primary-fixed border-b-4 border-primary-fixed pb-2">THE DIFFERENCE</span>
+</h2>
+<blockquote class="font-body-lg text-body-lg text-on-surface-variant border-l-2 border-outline-variant pl-6 mb-8 italic">
+                        "In the final sprint, every micro-adjustment matters. STYORA doesn't just clothe me; it engineers my movement. It's the silent advantage that turns potential into podiums."
+                    </blockquote>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant overflow-hidden border border-outline-variant">
+<img alt="Athlete" class="w-full h-full object-cover" data-alt="Close-up portrait of an intense, sweating elite athlete looking directly into the camera. The lighting is moody and cinematic, illuminating sweat beads on their skin against a dark void background. The aesthetic is high-contrast, serious, and powerful, representing peak human performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLBKDVD9G8tB5qjoBF06ec9AGS6WPO4Ke4Ne6ZrveEQyM3g6Iuvjv45fAwAWDpfZxY2O8VyKCY87jTI6UOoJoqYc16R_fDvAKv8u-RWMmh6W70TH9A6T37v8HQLsSXM3POpPFr5sN5xdM-gcj5IUFXSkhbJJVjlBdD_lJPOh1RjfvXAIuyIBuFXhjeqmWGsQ96kSbJrBjHS3eiCJFlOy2YF8b5UXdu2mfVz_pqPrB3DSH72DAlNSggBqJqvaC8WvHIfy2w4s3WnvE"/>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-primary">MARCUS V.</div>
+<div class="font-body-md text-[12px] text-on-surface-variant">OLYMPIC SPRINTER</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 relative aspect-square max-h-[500px] w-full mx-auto">
+<!-- Placeholder for dramatic stat visualization or image -->
+<div class="absolute inset-0 bg-cover bg-center rounded-xl border border-outline-variant shadow-2xl mix-blend-lighten grayscale hover:grayscale-0 transition-all duration-700" data-alt="A stylized, high-contrast abstract visualization of a runner's stride broken down into motion-blurred phases. Dark, obsidian tones dominate, intersected by sharp, geometric lines in neon Volt (#CCFF00) representing biomechanical data and speed metrics. The image conveys relentless forward momentum and data-driven athletic supremacy." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZrI8n2cu94tQ0faph6uboZ5QSVdHg7gzn_3bBljMbqZH_3KfmJSsKzDz4v5JranFb4mBzGNy6lCI6igdaQM6SV35mFYMkdiAF3rtkv_PoA96eE79fffRLvigsJt9VXN5FkA02le0xS0r4tKJOR4J-yXbLqcU9KCR9g6oO0iS5czYXuiR2iFOxjMH0OasprZ0jXYPc5SWwSgWDDKBDSrJ0hMpzDGpygEKXKxAttsN20ZN4EHkDUyjQrHysOHsRSPkHu7bts3D_ZpA')"></div>
+<!-- Decorative elements -->
+<div class="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-primary-fixed opacity-50"></div>
+<div class="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-primary-fixed opacity-50"></div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Join Elite -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop flex justify-center text-center">
+<div class="max-w-2xl w-full">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mb-4">JOIN THE ELITE</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                    Gain exclusive access to limited drops, performance insights, and early access to the kinetic series.
+                </p>
+<form class="flex flex-col sm:flex-row gap-4 justify-center">
+<input class="bg-background border border-outline-variant text-primary font-label-caps text-label-caps px-6 py-4 rounded-none w-full sm:w-96 input-glow transition-all" placeholder="ENTER YOUR EMAIL" required="" type="email"/>
+<button class="bg-transparent border border-outline-variant text-primary font-label-caps text-label-caps px-8 py-4 rounded-none hover:bg-surface-variant hover:text-primary transition-all whitespace-nowrap" type="submit">
+                        SUBSCRIBE
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant w-full py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-desktop">
+<!-- Brand -->
+<div class="col-span-1 lg:col-span-2">
+<div class="font-display-xl text-display-xl text-primary-fixed mb-4 leading-none tracking-tighter">STYORA</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mb-8">
+                    Pushing the boundaries of human performance through relentless innovation and uncompromising design.
+                </p>
+<div class="font-label-caps text-label-caps text-on-surface-variant">
+                    © 2024 STYORA PERFORMANCE. ALL RIGHTS RESERVED.
+                </div>
+</div>
+<!-- Links 1 -->
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase border-b border-outline-variant pb-2 inline-block">Support</h4>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Shipping</a></li>
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Returns</a></li>
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<!-- Links 2 -->
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase border-b border-outline-variant pb-2 inline-block">Legal</h4>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

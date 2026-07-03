@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STYORA - Move Faster</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#e5e2e3",
+                    "inverse-primary": "#506600",
+                    "on-primary": "#283500",
+                    "on-background": "#e5e2e3",
+                    "primary": "#ffffff",
+                    "background": "#131314",
+                    "outline": "#8e9379",
+                    "surface-variant": "#353436",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-secondary-fixed": "#00174d",
+                    "surface-tint": "#abd600",
+                    "surface-container-highest": "#353436",
+                    "on-error": "#690005",
+                    "surface-container-high": "#2a2a2b",
+                    "error-container": "#93000a",
+                    "inverse-on-surface": "#313031",
+                    "on-secondary-container": "#d8dfff",
+                    "surface": "#131314",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-dim": "#131314",
+                    "secondary-fixed-dim": "#b5c4ff",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "inverse-surface": "#e5e2e3",
+                    "surface-container-lowest": "#0e0e0f",
+                    "secondary": "#b5c4ff",
+                    "on-surface-variant": "#c4c9ac",
+                    "on-tertiary-container": "#636565",
+                    "tertiary": "#ffffff",
+                    "on-tertiary": "#2f3131",
+                    "tertiary-container": "#e2e2e2",
+                    "secondary-container": "#0056ea",
+                    "surface-container-low": "#1c1b1c",
+                    "primary-fixed": "#c3f400",
+                    "on-primary-container": "#556d00",
+                    "primary-container": "#c3f400",
+                    "error": "#ffb4ab",
+                    "on-secondary": "#00297a",
+                    "surface-container": "#201f20",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#003dab",
+                    "secondary-fixed": "#dbe1ff",
+                    "surface-bright": "#3a393a",
+                    "outline-variant": "#444933",
+                    "on-primary-fixed": "#161e00",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-primary-fixed-variant": "#3c4d00",
+                    "primary-fixed-dim": "#abd600"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "section-gap": "120px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Anton"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "display-xl": [
+                            "Anton"
+                    ],
+                    "headline-lg": [
+                            "Anton"
+                    ],
+                    "stats-md": [
+                            "Anton"
+                    ],
+                    "display-lg": [
+                            "Anton"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "label-caps": [
+                            "JetBrains Mono"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-xl": [
+                            "96px",
+                            {
+                                    "lineHeight": "90px",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "stats-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "24px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "60px",
+                                    "letterSpacing": "-0.03em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        .glow-volt {
+            box-shadow: 0 0 40px rgba(204, 255, 0, 0.2);
+        }
+        .glow-volt-hover:hover {
+            box-shadow: 0 0 40px rgba(204, 255, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        .hairline-border {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .kinetic-tilt {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .kinetic-tilt:hover {
+            transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) scale3d(1.02, 1.02, 1.02);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden w-full">
+<!-- TopNavBar (Mobile First) -->
+<nav class="bg-background/80 backdrop-blur-md text-primary-fixed fixed top-0 w-full z-50 border-b border-outline-variant transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-16 md:h-20">
+<!-- Hamburger Menu (Mobile) -->
+<button class="md:hidden text-primary-fixed p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+<!-- Brand -->
+<a class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary-fixed tracking-tighter" href="#">STYORA</a>
+<!-- Desktop Nav Links (Hidden on Mobile) -->
+<div class="hidden md:flex gap-8 font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors hover:bg-surface-variant/50 px-2 py-1" href="#">Men</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors hover:bg-surface-variant/50 px-2 py-1" href="#">Women</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors hover:bg-surface-variant/50 px-2 py-1" href="#">Shoes</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors hover:bg-surface-variant/50 px-2 py-1" href="#">Sale</a>
+</div>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-4">
+<button class="text-primary-fixed p-2 hidden md:block">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-primary-fixed p-2">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-16 md:pt-20">
+<!-- Hero Section -->
+<section class="relative w-full h-[751px] flex flex-col justify-end pb-margin-mobile px-margin-mobile overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 w-full h-full opacity-60" data-alt="A professional athlete sprinting through a futuristic, dark urban environment at night with neon Volt and Electric Blue highlights." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLt8dfYOziiMM77tshEDuDGfRRRkbwl3gDMSbINgluk31PjeB3oro0QLfu00J0wHbc6YY2Tj1pO3DiV_raJBf8L7-3VCsq0qBGY2dGMnq1f57gMhqGWUMyQfk8EsWGvMv6fI64Rrl6yvucusncQvuSQ7Xc6cmGT3EOfZaklmjqxyCtAhewnT5Nursg-wMyi_FkGqqaumPdg1Bq4pkyAyzOi87Y9wSwBMqRAQ2dMQCA3ZlSAlG51CWaktoA8');"></div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent z-10"></div>
+<!-- Content -->
+<div class="relative z-20 flex flex-col items-start gap-6 max-w-lg">
+<div class="font-label-caps text-label-caps px-3 py-1 rounded-full hairline-border inline-block bg-surface-container/50 backdrop-blur-sm">
+                    NEW ARRIVALS
+                </div>
+<h1 class="font-display-xl text-[64px] leading-[60px] md:text-display-xl uppercase text-primary tracking-tighter m-0 flex flex-col">
+<span class="">MOVE</span>
+<span class="text-primary-fixed">FASTER</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm">
+                    Engineered for relentless momentum. The new V-Series collection.
+                </p>
+<button class="bg-primary-fixed text-on-primary font-label-caps text-label-caps px-8 py-4 rounded-DEFAULT w-full md:w-auto glow-volt transition-all uppercase tracking-widest mt-4">
+                    Shop Collection
+                </button>
+</div>
+</section>
+<!-- Marquee Section -->
+<div class="w-full bg-primary-fixed text-on-primary py-3 overflow-hidden border-y border-outline-variant">
+<div class="marquee-content font-stats-md text-stats-md uppercase flex gap-12 whitespace-nowrap">
+<span class="">Performance Engineered</span>
+<span class="">•</span>
+<span class="">Relentless Momentum</span>
+<span class="">•</span>
+<span class="">Styora Athletics</span>
+<span class="">•</span>
+<span class="">Performance Engineered</span>
+<span class="">•</span>
+<span class="">Relentless Momentum</span>
+<span class="">•</span>
+<span class="">Styora Athletics</span>
+<span class="">•</span>
+<span class="">Performance Engineered</span>
+</div>
+</div>
+<!-- Featured Grid Section -->
+<section class="py-section-gap px-margin-mobile max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-lg-mobile md:text-headline-lg uppercase tracking-tighter">Featured Gear</h2>
+<a class="font-label-caps text-label-caps text-primary-fixed hidden md:block hairline-border px-4 py-2 rounded-full hover:bg-primary-fixed/10 transition-colors" href="#">VIEW ALL</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-highest rounded-[16px] hairline-border overflow-hidden group kinetic-tilt flex flex-col">
+<div class="relative h-48 md:h-64 bg-surface-lowest p-4 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 z-10 relative drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]" data-alt="High-contrast studio photography of a sleek, black running shoe with striking Volt green accents, floating mid-air against a deep charcoal background. Dramatic lighting highlights the technical mesh textures and aggressive aerodynamic silhouette of the footwear. Minimalist, premium sport-technology aesthetic." src="https://lh3.googleusercontent.com/aida/AP1WRLtgn20JRXgzeg7PbRUPDlUwsvhjbh_91eGmmjaO9tuJC1XLSzYryIsbk-8kvO8R01xiD0hWk5280c75BfnjHAeNWhQCgpua0zjo5qet4ICpUhtMdeOgZhLHZH-jgVaFRLbPD6rrmXFxqpqFpqG5PEL_bJBsIJ3UggfCCWz_mSGQLM1WNsW922mBQXB5kXQw6Tqn91dYWhFS16xVnfhABpqTx-bRyHnmC6rnFYr2-XInpJo09pthyYuV5E0"/>
+<!-- Glow effect behind shoe -->
+<div class="absolute inset-0 bg-primary-fixed/5 rounded-full blur-2xl transform scale-50 group-hover:scale-100 transition-transform duration-500"></div>
+</div>
+<div class="p-4 flex flex-col flex-grow justify-between bg-surface-container">
+<div>
+<div class="font-label-caps text-[10px] text-on-surface-variant mb-1">FOOTWEAR</div>
+<h3 class="font-headline-lg-mobile text-[20px] leading-tight uppercase mb-2">V-Strike Pro</h3>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-caps text-label-caps text-primary-fixed">$180</span>
+<button class="w-8 h-8 rounded-full border border-primary-fixed text-primary-fixed flex items-center justify-center hover:bg-primary-fixed hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-highest rounded-[16px] hairline-border overflow-hidden group kinetic-tilt flex flex-col">
+<div class="relative h-48 md:h-64 bg-surface-lowest p-4 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 z-10 relative drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]" data-alt="Studio shot of a technical, lightweight men's athletic windbreaker jacket in deep obsidian gray with thin, precise Volt green reflective piping. The jacket is styled dynamically, appearing weightless against a dark background with subtle moody lighting emphasizing the advanced fabric textures." src="https://lh3.googleusercontent.com/aida/AP1WRLsdgiwCQ65iYmBi3cLjKZljtU0Pgh1egsxo8GeK8x2ujN2IjAGgmZ5rFUUPbzHlRe8k1YDiFmlp7qgtT8c16uwjchHPJGfagvih23L3D1PiTk3M13ByJvp5eD1Zyi7gxEDslwjVAe3eDDgPIJJks0r8T1jyub8H2Q-q4jViNN-_tbfcQEiBSLkml65NetVzvMUNkv0__P7UPoe_i19dg1_9nzuZiKWDGowl68bya1GRganSdBMJZScxGQ"/>
+</div>
+<div class="p-4 flex flex-col flex-grow justify-between bg-surface-container">
+<div>
+<div class="font-label-caps text-[10px] text-on-surface-variant mb-1">APPAREL</div>
+<h3 class="font-headline-lg-mobile text-[20px] leading-tight uppercase mb-2">VORTEX SHELL</h3>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-caps text-label-caps text-primary-fixed">$125</span>
+<button class="w-8 h-8 rounded-full border border-primary-fixed text-primary-fixed flex items-center justify-center hover:bg-primary-fixed hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<a class="font-label-caps text-label-caps text-primary-fixed block md:hidden hairline-border px-4 py-3 rounded-DEFAULT text-center mt-8 hover:bg-primary-fixed/10 transition-colors" href="#">VIEW ALL GEAR</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-desktop md:px-margin-mobile">
+<!-- Brand Column -->
+<div class="flex flex-col gap-4">
+<a class="font-display-xl text-display-xl text-primary-fixed uppercase tracking-tighter leading-none mb-4" href="#">STYORA</a>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 STYORA PERFORMANCE. ALL RIGHTS RESERVED.</p>
+</div>
+<!-- Links Column -->
+<div class="flex flex-col gap-3 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Shipping</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Returns</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

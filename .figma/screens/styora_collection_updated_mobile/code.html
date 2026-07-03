@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STYORA - Collections</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#abd600",
+                        "inverse-primary": "#506600",
+                        "on-surface": "#e5e2e3",
+                        "on-secondary-container": "#d8dfff",
+                        "secondary-fixed": "#dbe1ff",
+                        "secondary-fixed-dim": "#b5c4ff",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "error-container": "#93000a",
+                        "primary-container": "#c3f400",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#00297a",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353436",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container": "#201f20",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "inverse-surface": "#e5e2e3",
+                        "surface": "#131314",
+                        "on-tertiary-container": "#636565",
+                        "primary-fixed": "#c3f400",
+                        "on-surface-variant": "#c4c9ac",
+                        "primary": "#ffffff",
+                        "on-primary-fixed": "#161e00",
+                        "inverse-on-surface": "#313031",
+                        "outline": "#8e9379",
+                        "on-primary": "#283500",
+                        "surface-container-low": "#1c1b1c",
+                        "outline-variant": "#444933",
+                        "on-background": "#e5e2e3",
+                        "surface-container-high": "#2a2a2b",
+                        "background": "#131314",
+                        "primary-fixed-dim": "#abd600",
+                        "surface-container-highest": "#353436",
+                        "surface-dim": "#131314",
+                        "secondary": "#b5c4ff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "tertiary-container": "#e2e2e2",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-primary-container": "#556d00",
+                        "tertiary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#003dab",
+                        "on-error": "#690005",
+                        "on-tertiary": "#2f3131",
+                        "surface-bright": "#3a393a",
+                        "secondary-container": "#0056ea",
+                        "on-secondary-fixed": "#00174d",
+                        "volt": "#CCFF00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "container-max": "1440px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Anton"],
+                        "display-lg": ["Anton"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Anton"],
+                        "body-md": ["Inter"],
+                        "display-xl": ["Anton"],
+                        "stats-md": ["Anton"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "60px", "letterSpacing": "-0.03em", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-xl": ["96px", { "lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "400" }],
+                        "stats-md": ["24px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0A0A0B; color: #ffffff; overflow-x: hidden; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-panel { background: rgba(20, 20, 23, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hairline-border { border: 1px solid rgba(255, 255, 255, 0.1); }
+        .volt-glow:hover { box-shadow: 0 0 30px rgba(204, 255, 0, 0.15); border-color: rgba(204, 255, 0, 0.5); }
+        .volt-text { color: #CCFF00; }
+        .card-surface { background-color: #141417; }
+        .kinetic-title { text-transform: uppercase; }
+        .filter-chip { transition: all 0.2s ease; }
+        .filter-chip.active { background-color: #CCFF00; color: #0A0A0B; border-color: #CCFF00; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10 flex justify-between items-center px-margin-mobile py-4 w-full">
+<!-- Brand -->
+<a class="font-display-lg text-display-lg text-primary tracking-tighter" href="#" style="font-size: 32px; line-height: 1;">STYORA</a>
+<!-- Navigation Links (Hidden on Mobile as per constraints, usually handled by a menu, but for layout we focus on the requested structure) -->
+<div class="hidden md:flex space-x-6 items-center">
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary-fixed pb-1 hover:text-primary-fixed transition-colors duration-300" href="#">Collections</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-fixed transition-colors duration-300" href="#">Performance</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-fixed transition-colors duration-300" href="#">Innovation</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-fixed transition-colors duration-300" href="#">Journal</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex space-x-4 items-center">
+<button class="active:scale-95 transition-transform text-on-surface-variant hover:text-primary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+<button class="active:scale-95 transition-transform text-on-surface-variant hover:text-primary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-24 pb-section-gap px-margin-mobile w-full max-w-container-max mx-auto">
+<!-- Page Header -->
+<header class="mb-8">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile kinetic-title text-primary mb-2">LATEST COLLECTIONS</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">High-octane gear for the modern athlete.</p>
+</header>
+<!-- Filters -->
+<div class="mb-8 overflow-x-auto hide-scrollbar flex space-x-3 pb-2 -mx-margin-mobile px-margin-mobile">
+<button class="filter-chip active font-label-caps text-label-caps px-4 py-2 rounded-full hairline-border whitespace-nowrap">ALL GEAR</button>
+<button class="filter-chip font-label-caps text-label-caps px-4 py-2 rounded-full hairline-border text-primary whitespace-nowrap hover:border-white/30">TOPS</button>
+<button class="filter-chip font-label-caps text-label-caps px-4 py-2 rounded-full hairline-border text-primary whitespace-nowrap hover:border-white/30">BOTTOMS</button>
+<button class="filter-chip font-label-caps text-label-caps px-4 py-2 rounded-full hairline-border text-primary whitespace-nowrap hover:border-white/30">OUTERWEAR</button>
+<button class="filter-chip font-label-caps text-label-caps px-4 py-2 rounded-full hairline-border text-primary whitespace-nowrap hover:border-white/30">SHOES</button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Product Card 1 -->
+<article class="card-surface rounded-xl hairline-border volt-glow transition-all duration-300 flex flex-col overflow-hidden relative group">
+<div class="relative w-full aspect-[4/5] bg-[#1a1a1e] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A sleek, futuristic black athletic jacket with high-contrast volt green accents, displayed floating in a dark, minimalist studio environment. The lighting is cinematic, highlighting the technical fabric texture and precision engineered seams." src="https://lh3.googleusercontent.com/aida/AP1WRLsdgiwCQ65iYmBi3cLjKZljtU0Pgh1egsxo8GeK8x2ujN2IjAGgmZ5rFUUPbzHlRe8k1YDiFmlp7qgtT8c16uwjchHPJGfagvih23L3D1PiTk3M13ByJvp5eD1Zyi7gxEDslwjVAe3eDDgPIJJks0r8T1jyub8H2Q-q4jViNN-_tbfcQEiBSLkml65NetVzvMUNkv0__P7UPoe_i19dg1_9nzuZiKWDGowl68bya1GRganSdBMJZScxGQ"/>
+<div class="absolute top-2 left-2 bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full hairline-border">
+<span class="font-label-caps text-[10px] text-white">NEW</span>
+</div>
+</div>
+<div class="p-3 flex flex-col flex-grow justify-between">
+<div>
+<span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">OUTERWEAR</span>
+<h3 class="font-headline-lg-mobile text-[18px] leading-tight text-primary mb-2 uppercase truncate">Vortex Shell</h3>
+</div>
+<div class="font-stats-md text-stats-md volt-text text-[18px]">
+                        $245
+                    </div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="card-surface rounded-xl hairline-border volt-glow transition-all duration-300 flex flex-col overflow-hidden relative group">
+<div class="relative w-full aspect-[4/5] bg-[#1a1a1e] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="High-performance athletic running shoes in dark charcoal with vibrant neon green soles. The shoes appear suspended in mid-air against a stark, deep black background with sharp, directional lighting emphasizing speed and kinetic energy." src="https://lh3.googleusercontent.com/aida/AP1WRLve4pD0kDTA31bwpVztoeM11nXXlMShcUdGpAyhd3n8KjidMkmOPCRQxrKjrlbS3kvLydsejRnUu2RqMq9OdkzvN__sQ_06O-1nIPyFYdjCEixw9OCCfVIHz1Mv4kuAq7xfJUiY0kPI_CEYFoQwnXRoxokbZascXHaplNoDpyY8PAQiKm1HvWB1Gvnoq8gJ-gvpPAUEc3DVEIN1U3onyF27zphFNIP_YrSUuiYfoD5HL6fIiuwAPqACGg"/>
+</div>
+<div class="p-3 flex flex-col flex-grow justify-between">
+<div>
+<span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">SHOES</span>
+<h3 class="font-headline-lg-mobile text-[18px] leading-tight text-primary mb-2 uppercase truncate">KINETIC CARBON R1</h3>
+</div>
+<div class="font-stats-md text-stats-md volt-text text-[18px]">
+                        $180
+                    </div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="card-surface rounded-xl hairline-border volt-glow transition-all duration-300 flex flex-col overflow-hidden relative group">
+<div class="relative w-full aspect-[4/5] bg-[#1a1a1e] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A pair of tactical, compression-fit athletic tights in deep obsidian black, featuring subtle geometric patterns that reflect light. Photographed in a moody, low-key lighting setup that emphasizes the muscular structure and advanced fabric technology." src="https://lh3.googleusercontent.com/aida/AP1WRLv-l0-HBOuVi0CRSDnk9-CsvNCgrkY-U3Us3PzkLqeIscmRjfbuBbuBWOt1uie-iSrTEgrq1ZZFn6oaZKSYHh-ky5a3oqI2LqlrQWpdBYpsm_S9TcZ24q8A28-gCOD3fhDlm4cSy9sVyh9qVwhV2PWhtyOBJcKJNbAavL6SRGDZyODk7xqfMLFjimfd2J41WXlpbfqBQJuFPz0dpqiuDkSKA1OuktUJLcO8j7wTavLbQ6SrJzQ4ui2Smbg"/>
+</div>
+<div class="p-3 flex flex-col flex-grow justify-between">
+<div>
+<span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">BOTTOMS</span>
+<h3 class="font-headline-lg-mobile text-[18px] leading-tight text-primary mb-2 uppercase truncate">Aero Tight</h3>
+</div>
+<div class="font-stats-md text-stats-md volt-text text-[18px]">
+                        $120
+                    </div>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="card-surface rounded-xl hairline-border volt-glow transition-all duration-300 flex flex-col overflow-hidden relative group">
+<div class="relative w-full aspect-[4/5] bg-[#1a1a1e] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A minimalist, breathable athletic tank top in stark white with a striking volt green logo placement. The garment is shown floating organically in a vast, dark space with a single harsh spotlight creating deep shadows, conveying elite performance." src="https://lh3.googleusercontent.com/aida/AP1WRLv-lv7tr7olLGNgX-5cefmDg4Bz-W_gpjVtVHfPideyG-W0O49PwK3RBt9FAaTGnOgGVB3y8RrL0YYi1hIgMqth482vrUBTQNoJAgzhhnohHlKz5IeQqZ9p5HSFZLGRa5xji6KSVuMMn1elNxXImqcqnCngndGesSaplu1dhyTRAFrdWBJpngicMAxn8gEgXefT6wHIPSm7ql9pGZujbJ-Q4sXt06qJUbUpM0fKE2aoMDVnODiRzqnc0uM"/>
+<div class="absolute top-2 left-2 bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full hairline-border">
+<span class="font-label-caps text-[10px] text-white">BESTSELLER</span>
+</div>
+</div>
+<div class="p-3 flex flex-col flex-grow justify-between">
+<div>
+<span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">TOPS</span>
+<h3 class="font-headline-lg-mobile text-[18px] leading-tight text-primary mb-2 uppercase truncate">VOLT SINGLET</h3>
+</div>
+<div class="font-stats-md text-stats-md volt-text text-[18px]">
+                        $65
+                    </div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-section-gap border-t border-white/5 bg-surface-container-lowest flex flex-col md:flex-row justify-between items-start px-margin-desktop py-20 max-w-container-max mx-auto px-margin-mobile py-12">
+<div class="mb-8 md:mb-0">
+<div class="font-display-xl text-display-xl text-primary-fixed tracking-tighter mb-4" style="font-size: 48px; line-height: 1;">STYORA</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">© 2024 STYORA PERFORMANCE LABS. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-col space-y-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Accessibility</a>
+</div>
+</footer>
+</body></html>
