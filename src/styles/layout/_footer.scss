@@ -1,4 +1,186 @@
-// Footer placeholder
+// Footer component
+// Multi-column footer with brand, links, and social
+
 .footer {
-  // Will be implemented in Week 1, Days 5-7
+  margin-top: var(--space-16);
+  padding-block: var(--space-12) var(--space-6);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
+    
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: 2fr repeat(4, 1fr);
+    }
+  }
+  
+  // Brand section
+  &__brand {
+    @media (min-width: 640px) {
+      grid-column: span 2;
+    }
+    
+    @media (min-width: 1024px) {
+      grid-column: span 1;
+    }
+  }
+  
+  &__logo {
+    display: inline-flex;
+    font-family: var(--font-display);
+    font-size: var(--font-xl);
+    font-weight: var(--weight-black);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+    transition: color var(--duration-fast) ease;
+    
+    &:hover {
+      color: var(--color-volt);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid var(--color-volt);
+      outline-offset: 4px;
+    }
+  }
+  
+  &__logo-text {
+    background: linear-gradient(135deg, var(--color-volt) 0%, var(--color-text) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  &__tagline {
+    color: var(--color-text-muted);
+    font-size: var(--font-sm);
+    line-height: var(--leading-relaxed);
+    max-width: 32ch;
+  }
+  
+  // Section
+  &__section {
+    // Styles for each column
+  }
+  
+  &__heading {
+    font-family: var(--font-display);
+    font-size: var(--font-sm);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-volt);
+    margin-bottom: var(--space-4);
+  }
+  
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  &__link {
+    color: var(--color-text-muted);
+    font-size: var(--font-sm);
+    transition: color var(--duration-fast) ease;
+    
+    &:hover {
+      color: var(--color-volt);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid var(--color-volt);
+      outline-offset: 4px;
+    }
+  }
+  
+  // Social links
+  &__social {
+    display: flex;
+    gap: var(--space-3);
+  }
+  
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+    border-radius: 50%;
+    transition: color var(--duration-fast) ease,
+                background var(--duration-fast) ease;
+    
+    &:hover {
+      color: var(--color-bg);
+      background: var(--color-volt);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid var(--color-volt);
+      outline-offset: 4px;
+    }
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  // Bottom section
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  &__copyright {
+    color: var(--color-text-muted);
+    font-size: var(--font-sm);
+  }
+  
+  &__legal {
+    display: flex;
+    gap: var(--space-5);
+  }
+  
+  &__legal-link {
+    color: var(--color-text-muted);
+    font-size: var(--font-sm);
+    transition: color var(--duration-fast) ease;
+    
+    &:hover {
+      color: var(--color-volt);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid var(--color-volt);
+      outline-offset: 4px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none;
+    }
+  }
 }

@@ -1,4 +1,110 @@
-// Header placeholder
+// Header component
+// Sticky header with blur backdrop and scroll shadow
+
 .header {
-  // Will be implemented in Week 1, Days 5-7
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 11, 0.8);
+  backdrop-filter: var(--blur-backdrop);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-base) var(--ease-out-expo),
+              box-shadow var(--duration-base) var(--ease-out-expo);
+  
+  // Scrolled state (added via JS)
+  &--scrolled {
+    border-bottom-color: var(--color-border);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    padding-block: var(--space-4);
+    
+    @media (min-width: 768px) {
+      padding-block: var(--space-5);
+    }
+  }
+  
+  // Logo
+  &__logo {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: var(--font-xl);
+    font-weight: var(--weight-black);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    transition: color var(--duration-fast) ease;
+    
+    &:hover {
+      color: var(--color-volt);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid var(--color-volt);
+      outline-offset: 4px;
+    }
+  }
+  
+  &__logo-text {
+    background: linear-gradient(135deg, var(--color-volt) 0%, var(--color-text) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  // Cart
+  &__cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: var(--color-text);
+    transition: color var(--duration-fast) ease;
+    
+    &:hover {
+      color: var(--color-volt);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid var(--color-volt);
+      outline-offset: 4px;
+    }
+  }
+  
+  &__cart-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  &__cart-count {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding-inline: 4px;
+    background: var(--color-volt);
+    color: var(--color-bg);
+    font-size: var(--font-xs);
+    font-weight: var(--weight-bold);
+    border-radius: 9px;
+    line-height: 1;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    backdrop-filter: none;
+    background: var(--color-bg);
+  }
 }
