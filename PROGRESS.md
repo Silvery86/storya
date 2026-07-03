@@ -1,18 +1,21 @@
 # STYORA Project Progress
 
 **Last Updated:** 2026-07-04  
-**Current Phase:** Week 1, Days 3-4 ✅ COMPLETE (Ahead of schedule!)
+**Current Phase:** Week 1 Complete ✅ (Days 1-7)
 
 ---
 
 ## 📊 Overall Progress
 
 ```
-Week 1: Setup, Design System & Structure
+Week 1: Setup, Design System & Structure ✅ COMPLETE
 ├── ✅ Day 1: Vite scaffold, repo setup, first commit
 ├── ✅ Day 2: Design system tokens (COMPLETED EARLY)
-├── ✅ Day 3-4: Semantic HTML for all 3 pages
-└── 🔲 Day 5-7: Layout blocks (header, footer, nav)
+├── ✅ Day 3: Semantic HTML (3 pages)
+├── ✅ Day 4: Validation & schemas
+├── ✅ Day 5: Header & nav styling
+├── ✅ Day 6: Footer & layout styling
+└── ✅ Day 7: JS modules & cross-browser ready
 
 Week 2: Pages, Features & Motion
 ├── 🔲 Day 8-10: Landing page + 3D motion
@@ -30,7 +33,7 @@ Legend: ✅ Complete | ⚠️ Partial | 🔲 Pending
 
 ---
 
-## ✅ Completed (Days 1-4)
+## ✅ Completed (Week 1 - Days 1-7)
 
 ### Day 1: Infrastructure ✅
 - [x] GitHub repo initialized (`styora`)
@@ -109,41 +112,95 @@ Legend: ✅ Complete | ⚠️ Partial | 🔲 Pending
 
 ---
 
-## 🎯 Next Steps (Day 5-7)
+### Days 5-7: Layout Blocks & Navigation ✅
 
-### Priority: Layout Blocks & Navigation
+**Header Component (_header.scss):**
+- [x] Sticky positioning with blur backdrop
+- [x] Scroll shadow effect (header--scrolled state via JS)
+- [x] Logo with volt gradient text
+- [x] Cart icon with count badge
+- [x] Responsive padding (mobile → desktop)
+- [x] Reduced-motion fallback
 
-**Header & Navigation:**
-- [ ] Style sticky header with blur + shadow on scroll
-- [ ] Implement mobile hamburger menu animation
-- [ ] Add cart icon styling
-- [ ] Create `stickyHeader.js` module
-- [ ] Create `nav.js` module for mobile menu
+**Navigation Component (_nav.scss):**
+- [x] Desktop horizontal navigation
+- [x] Mobile hamburger menu with slide-in animation
+- [x] Animated toggle icon (hamburger → X)
+- [x] Full-screen mobile menu overlay
+- [x] BEM naming throughout
+- [x] Reduced-motion support
 
-**Footer:**
-- [ ] Style footer grid layout
-- [ ] Social icon hover states
-- [ ] Mobile responsive footer
+**Footer Component (_footer.scss):**
+- [x] Responsive grid layout (1 col → 2 col → 5 col)
+- [x] Brand section with logo and tagline
+- [x] 4 link columns (Shop, Support, Company, Follow)
+- [x] Social icons with hover states (background change)
+- [x] Bottom section with copyright and legal links
+- [x] Fully responsive
 
-**Global Layout:**
-- [ ] Container styles (responsive padding)
-- [ ] Skip link visible on focus
-- [ ] Test on Chrome, Safari, Firefox
+**Container (_container.scss):**
+- [x] Responsive padding at all breakpoints (16px → 48px)
+- [x] Narrow and wide variants
+- [x] Max-width constraints
 
-**Reduced Motion:**
-- [ ] Set up `_mixins.scss` reduced-motion mixin
-- [ ] Apply to all animations
+**Global Utilities (_global.scss):**
+- [x] Enhanced skip-link with focus state and shadow
+- [x] Focus-visible styles for all interactive elements
+- [x] Improved accessibility
+
+**JavaScript Modules:**
+- [x] `stickyHeader.js`: Scroll detection, rafThrottle, add/remove scrolled class
+- [x] `nav.js`: Mobile menu toggle, keyboard support (Escape to close), focus management, body scroll lock
+- [x] `main.js`: Initialize all modules on DOMContentLoaded
+
+---
+
+## 🎯 Next Steps (Week 2: Days 8-10)
+
+### Priority: Landing Page + 3D Motion
+
+**Hero Section:**
+- [ ] Style hero with 3D parallax background
+- [ ] Kinetic headline styling (large display font)
+- [ ] Button component (primary, secondary variants)
+- [ ] Hero tilt effect on pointer/scroll
+
+**Marquee:**
+- [ ] CSS-only kinetic marquee animation
+- [ ] Reduced-motion fallback
+
+**Featured Products:**
+- [ ] Product card component with 3D tilt
+- [ ] Grid layout (2 → 3 → 4 columns)
+- [ ] Hover effects (lift shadow, volt glow)
+- [ ] `tilt.js` module for 3D card rotation
+
+**Stats & Testimonial:**
+- [ ] Stats section styling
+- [ ] Count-up animation
+- [ ] Testimonial card styling
+
+**Newsletter:**
+- [ ] Form styling
+- [ ] Input validation styling
+- [ ] Newsletter.js for validation
 
 ---
 
 ## 📈 Metrics
 
-**Files Created:** 24  
-**Commits:** 6  
-**Lines of HTML:** ~1,150  
-**Build Size:** 13.15 kB HTML + 4.20 kB assets (gzipped)  
-**Build Time:** ~510ms  
-**Pages:** 3/3 complete (semantic HTML)
+**Files Created:** 27 (+3 new)
+**Commits:** 9  
+**Lines of Code:** ~2,600  
+**Build Size:**
+- HTML: 13.15 kB (gzipped)
+- CSS: 10.87 kB (2.61 kB gzipped) — up from 3.45 kB
+- JS: 2.04 kB (0.94 kB gzipped) — up from 0.75 kB
+- **Total assets: 3.55 kB gzipped**
+
+**Build Time:** ~586ms  
+**Pages:** 3/3 (semantic HTML + layout styling)  
+**Todo Items:** 14/14 complete (100%)
 
 ---
 
