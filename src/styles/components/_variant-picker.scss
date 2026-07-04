@@ -1,0 +1,167 @@
+// ============================================================================
+// Variant Picker Component
+// ============================================================================
+
+.variant-picker {
+  &__group {
+    margin-bottom: var(--space-6);
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: var(--font-sm);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--neutral-400);
+    margin-bottom: var(--space-3);
+    
+    .selected {
+      color: var(--light);
+      margin-left: var(--space-2);
+    }
+  }
+  
+  // Color swatches
+  &__colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  
+  &__color-option {
+    position: relative;
+    
+    input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    label {
+      display: block;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 3px solid var(--neutral-700);
+      cursor: pointer;
+      
+      transition: all 0.2s var(--ease-out);
+      
+      &:hover {
+        transform: scale(1.1);
+        border-color: var(--neutral-500);
+      }
+    }
+    
+    // Selected state
+    input:checked + label {
+      border-color: var(--volt);
+      box-shadow: 0 0 0 2px var(--dark), 0 0 0 4px var(--volt);
+    }
+    
+    input:focus-visible + label {
+      outline: 2px solid var(--volt);
+      outline-offset: 4px;
+    }
+    
+    // Color backgrounds
+    &[data-color="black"] label { background: #1a1a1a; }
+    &[data-color="white"] label { background: #f5f5f5; }
+    &[data-color="volt"] label { background: var(--volt); }
+    &[data-color="blue"] label { background: var(--blue); }
+    &[data-color="grey"] label { background: #808080; }
+    &[data-color="red"] label { background: #ff4444; }
+  }
+  
+  // Size chips
+  &__sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  &__size-option {
+    position: relative;
+    
+    input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 60px;
+      height: 44px;
+      padding: 0 var(--space-4);
+      
+      font-family: var(--font-display);
+      font-size: var(--font-sm);
+      font-weight: 700;
+      
+      background: var(--neutral-800);
+      border: 2px solid var(--neutral-700);
+      color: var(--neutral-300);
+      cursor: pointer;
+      
+      transition: all 0.2s var(--ease-out);
+      
+      &:hover {
+        border-color: var(--volt);
+        color: var(--volt);
+      }
+    }
+    
+    // Selected state
+    input:checked + label {
+      background: var(--volt);
+      border-color: var(--volt);
+      color: var(--dark);
+    }
+    
+    input:focus-visible + label {
+      outline: 2px solid var(--volt);
+      outline-offset: 2px;
+    }
+    
+    // Disabled/Out of stock
+    input:disabled + label {
+      opacity: 0.3;
+      cursor: not-allowed;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: var(--neutral-600);
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .variant-picker {
+    &__color-option label,
+    &__size-option label {
+      transition: none;
+    }
+    
+    &__color-option label:hover {
+      transform: none;
+    }
+  }
+}

@@ -93,7 +93,264 @@
   </header>
   
   <!-- Main Content -->
-  <main id="main-content" role="main">
+  <main id="main-content" role="main" class="product">
+    <div class="container">
+      
+      <!-- Breadcrumb -->
+      <nav class="product__breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/collection.html">Collection</a></li>
+          <li><a href="/collection.html?category=outerwear">Outerwear</a></li>
+          <li class="is-current">Vortex Shell</li>
+        </ol>
+      </nav>
+      
+      <div class="product__layout">
+        
+        <!-- Product Gallery (Left Column) -->
+        <div class="product__gallery">
+          <!-- 360° Viewer -->
+          <div class="viewer-360" tabindex="0" aria-label="360° product view. Use arrow keys or drag to rotate">
+            <div class="viewer-360__canvas">
+              <img src="/src/assets/images/products/vortex-shell.jpg" alt="Vortex Shell jacket">
+            </div>
+            
+            <div class="viewer-360__loading">
+              <div class="viewer-360__loading-spinner"></div>
+            </div>
+            
+            <div class="viewer-360__controls">
+              <button class="viewer-360__control-btn" data-action="prev" aria-label="Previous frame">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+              <button class="viewer-360__control-btn" data-action="play" aria-label="Play rotation">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </button>
+              <button class="viewer-360__control-btn" data-action="next" aria-label="Next frame">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+            </div>
+            
+            <div class="viewer-360__indicator">1 / 36</div>
+            <div class="viewer-360__hint">Drag to rotate · Arrow keys supported</div>
+          </div>
+          
+          <!-- Thumbnails -->
+          <div class="viewer-thumbnails">
+            <div class="viewer-thumbnails__item is-active">
+              <button aria-label="View front">
+                <img src="/src/assets/images/products/vortex-shell.jpg" alt="Front view">
+              </button>
+            </div>
+            <div class="viewer-thumbnails__item">
+              <button aria-label="View side">
+                <img src="/src/assets/images/products/vortex-shell.jpg" alt="Side view">
+              </button>
+            </div>
+            <div class="viewer-thumbnails__item">
+              <button aria-label="View back">
+                <img src="/src/assets/images/products/vortex-shell.jpg" alt="Back view">
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product Info (Right Column) -->
+        <div class="product__info">
+          
+          <!-- Header -->
+          <div class="product__header">
+            <p class="product__category">Outerwear</p>
+            <h1 class="product__title">Vortex Shell</h1>
+            
+            <div class="product__rating">
+              <div class="stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+              </div>
+              <span class="count">(127 reviews)</span>
+            </div>
+            
+            <p class="product__price">$245</p>
+          </div>
+          
+          <p class="product__description">
+            The Vortex Shell is our most advanced waterproof jacket. Built with 3-layer Gore-Tex Pro fabric and engineered for maximum performance in extreme conditions. Features fully sealed seams, YKK AquaGuard zippers, and laser-cut ventilation.
+          </p>
+          
+          <!-- Variant Pickers -->
+          <div class="product__variants variant-picker">
+            <!-- Color Picker -->
+            <div class="variant-picker__group" data-variant="color">
+              <label class="variant-picker__label">
+                Color: <span class="selected">Black</span>
+              </label>
+              <div class="variant-picker__colors">
+                <div class="variant-picker__color-option" data-color="black">
+                  <input type="radio" name="color" value="black" id="color-black" checked>
+                  <label for="color-black" aria-label="Black"></label>
+                </div>
+                <div class="variant-picker__color-option" data-color="volt">
+                  <input type="radio" name="color" value="volt" id="color-volt">
+                  <label for="color-volt" aria-label="Volt"></label>
+                </div>
+                <div class="variant-picker__color-option" data-color="grey">
+                  <input type="radio" name="color" value="grey" id="color-grey">
+                  <label for="color-grey" aria-label="Grey"></label>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Size Picker -->
+            <div class="variant-picker__group" data-variant="size">
+              <label class="variant-picker__label">
+                Size: <span class="selected">M</span>
+              </label>
+              <div class="variant-picker__sizes">
+                <div class="variant-picker__size-option">
+                  <input type="radio" name="size" value="xs" id="size-xs">
+                  <label for="size-xs">XS</label>
+                </div>
+                <div class="variant-picker__size-option">
+                  <input type="radio" name="size" value="s" id="size-s">
+                  <label for="size-s">S</label>
+                </div>
+                <div class="variant-picker__size-option">
+                  <input type="radio" name="size" value="m" id="size-m" checked>
+                  <label for="size-m">M</label>
+                </div>
+                <div class="variant-picker__size-option">
+                  <input type="radio" name="size" value="l" id="size-l">
+                  <label for="size-l">L</label>
+                </div>
+                <div class="variant-picker__size-option">
+                  <input type="radio" name="size" value="xl" id="size-xl">
+                  <label for="size-xl">XL</label>
+                </div>
+                <div class="variant-picker__size-option">
+                  <input type="radio" name="size" value="xxl" id="size-xxl">
+                  <label for="size-xxl">XXL</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Add to Cart -->
+          <div class="product__actions">
+            <div class="quantity">
+              <label for="quantity">Quantity</label>
+              <div class="quantity__controls">
+                <button type="button" aria-label="Decrease quantity">−</button>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" aria-label="Quantity">
+                <button type="button" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+            
+            <button class="button" data-action="add-to-cart">Add to Cart — $245</button>
+          </div>
+          
+          <!-- Accordion Details -->
+          <div class="product__details accordion">
+            <div class="accordion__item">
+              <button class="accordion__trigger" aria-expanded="true" aria-controls="panel-description">
+                <span>Description</span>
+                <span class="accordion__icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor"/></svg>
+                </span>
+              </button>
+              <div class="accordion__panel" id="panel-description" aria-hidden="false">
+                <div class="accordion__content">
+                  <p>The Vortex Shell represents the pinnacle of performance outerwear engineering. Built with 3-layer Gore-Tex Pro fabric, it offers unmatched waterproof protection while maintaining exceptional breathability.</p>
+                  <p>Key features include:</p>
+                  <ul>
+                    <li>3-layer Gore-Tex Pro construction (28,000mm waterproofing)</li>
+                    <li>Fully sealed seams with taped construction</li>
+                    <li>YKK AquaGuard water-resistant zippers</li>
+                    <li>Laser-cut ventilation for temperature regulation</li>
+                    <li>Adjustable hood with peripheral vision design</li>
+                    <li>Multiple secure pockets with waterproof zippers</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion__item">
+              <button class="accordion__trigger" aria-expanded="false" aria-controls="panel-sizing">
+                <span>Size & Fit</span>
+                <span class="accordion__icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor"/></svg>
+                </span>
+              </button>
+              <div class="accordion__panel" id="panel-sizing" aria-hidden="true">
+                <div class="accordion__content">
+                  <p>Athletic fit designed for layering. Model is 6'1" (185cm) wearing size M.</p>
+                  <p><strong>Size Guide (chest measurement):</strong></p>
+                  <ul>
+                    <li>XS: 34-36" (86-91cm)</li>
+                    <li>S: 36-38" (91-96cm)</li>
+                    <li>M: 38-40" (96-101cm)</li>
+                    <li>L: 40-42" (101-106cm)</li>
+                    <li>XL: 42-44" (106-111cm)</li>
+                    <li>XXL: 44-46" (111-116cm)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion__item">
+              <button class="accordion__trigger" aria-expanded="false" aria-controls="panel-shipping">
+                <span>Shipping & Returns</span>
+                <span class="accordion__icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor"/></svg>
+                </span>
+              </button>
+              <div class="accordion__panel" id="panel-shipping" aria-hidden="true">
+                <div class="accordion__content">
+                  <p><strong>Free Shipping:</strong> On all orders over $150. Standard shipping takes 3-5 business days.</p>
+                  <p><strong>Returns:</strong> 60-day return policy. Items must be unworn with tags attached. Free return shipping.</p>
+                  <p><strong>Express Shipping:</strong> Available at checkout for next-day delivery in select areas.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion__item">
+              <button class="accordion__trigger" aria-expanded="false" aria-controls="panel-care">
+                <span>Care Instructions</span>
+                <span class="accordion__icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor"/></svg>
+                </span>
+              </button>
+              <div class="accordion__panel" id="panel-care" aria-hidden="true">
+                <div class="accordion__content">
+                  <p>To maintain the performance of your Vortex Shell:</p>
+                  <ul>
+                    <li>Machine wash cold with technical fabric detergent</li>
+                    <li>Do not use fabric softener (damages waterproofing)</li>
+                    <li>Tumble dry low or hang dry</li>
+                    <li>Reapply DWR treatment annually for best performance</li>
+                    <li>Store in a cool, dry place away from direct sunlight</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Sticky Mobile Cart Bar -->
+    <div class="product__sticky-bar">
+      <div class="product__sticky-bar__price">$245</div>
+      <button class="button product__sticky-bar__button" data-action="add-to-cart">Add to Cart</button>
+    </div>
+    
+  </main>
     <div class="container">
       <div class="product">
         

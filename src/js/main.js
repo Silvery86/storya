@@ -7,6 +7,9 @@ import { initTilt } from './modules/tilt.js';
 import { initCountUp } from './modules/countUp.js';
 import { initNewsletter } from './modules/newsletter.js';
 import { initFilter } from './modules/filter.js';
+import { initAccordion } from './modules/accordion.js';
+import { initVariantPicker } from './modules/variantPicker.js';
+import { initViewer360 } from './modules/viewer360.js';
 
 console.log('STYORA initialized');
 
@@ -41,6 +44,34 @@ function init() {
     
     // 3D tilt on product cards
     initTilt('[data-tilt]');
+  }
+  
+  // Product page modules
+  if (document.querySelector('.product')) {
+    // 360° viewer
+    initViewer360('.viewer-360', {
+      frameCount: 36,
+      imagePath: '/assets/products/vortex-shell'
+    });
+    
+    // Accordion sections
+    initAccordion('.accordion', {
+      allowMultiple: false
+    });
+    
+    // Variant picker
+    const variantPicker = initVariantPicker('.variant-picker');
+    
+    // Add to cart validation
+    const addToCartBtn = document.querySelector('[data-action="add-to-cart"]');
+    if (addToCartBtn && variantPicker) {
+      addToCartBtn.addEventListener('click', (e) => {
+        if (!variantPicker.isValid()) {
+          e.preventDefault();
+          alert('Please select a color and size');
+        }
+      });
+    }
   }
   
   console.log('All modules loaded');

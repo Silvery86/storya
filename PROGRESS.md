@@ -221,3 +221,65 @@ Legend: ✅ Complete | ⚠️ Partial | 🔲 Pending
 - **Next Focus:** Styling layout blocks (header, footer, nav) on Days 5-7
 - **Quality:** All HTML is semantic, accessible, and SEO-optimized
 - **Remember:** BEM naming starts now with component styling
+
+---
+
+## ✅ Week 2 Complete (Days 8-14)
+
+### Days 8-10: Landing Page + 3D Motion ✅
+
+**Components Created:**
+- [x] `_button.scss` - Button component (primary/secondary/ghost variants)
+- [x] `_product-card.scss` - 3D tilt-ready product cards with badges
+- [x] `_home.scss` - Hero, marquee, stats, testimonial, newsletter sections
+
+**JavaScript Modules:**
+- [x] `tilt.js` - Pointer-based 3D card rotation (15° max tilt)
+- [x] `countUp.js` - Animated stat counters with IntersectionObserver
+- [x] `newsletter.js` - Form validation with email format check
+
+**Features Implemented:**
+- [x] Hero section with 3D parallax backgrounds
+- [x] Kinetic marquee with infinite CSS animation
+- [x] Featured products grid with 3D tilt on hover
+- [x] Stats section with count-up animation (50k+, 127, 98%)
+- [x] Testimonial card with avatar + quote
+- [x] Newsletter form with real-time validation
+- [x] All animations respect `prefers-reduced-motion`
+- [x] RAF throttling for performant tilt tracking
+
+**Build Output:**
+- CSS: 22.10 kB (4.60 kB gzipped)
+- JS: 8.76 kB (2.95 kB gzipped)
+
+**Commit:** `b4d2119` - feat: implement landing page with 3D motion (Days 8-10)
+
+---
+
+### Days 11-14: Collection Page + Filtering ✅
+
+**Components Created:**
+- [x] `_collection.scss` - Collection page layout (sidebar + grid)
+- [x] `_filters.scss` - Filter component with chips + dropdown
+
+**JavaScript Modules:**
+- [x] `filter.js` - Product filtering and sorting system
+
+**Features Implemented:**
+- [x] Responsive collection layout (sidebar collapses on mobile)
+- [x] Mobile filter drawer with slide-in animation
+- [x] Category filtering with multi-select (Set data structure)
+- [x] Price sorting (low-to-high, high-to-high, featured)
+- [x] URL parameter support for deep linking (`?category=tops`)
+- [x] Live results count that updates on filter change
+- [x] All 15 products from catalog with proper data attributes
+- [x] 3D tilt effect on all product cards
+- [x] Filter backdrop for mobile overlay
+
+**Build Output:**
+- CSS: 26.43 kB (5.30 kB gzipped)
+- JS: 12.30 kB (3.82 kB gzipped)
+
+**Commit:** `f7301f7` - feat: implement collection page with filtering (Days 11-14)
+
+---

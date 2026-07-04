@@ -21,9 +21,12 @@
 @forward 'components/button';
 @forward 'components/product-card';
 @forward 'components/filters';
+@forward 'components/accordion';
+@forward 'components/variant-picker';
+@forward 'components/viewer-360';
 // ... more as we build
 
 // 5. Pages (page-specific styles)
 @forward 'pages/home';
 @forward 'pages/collection';
-// @forward 'pages/product';
+@forward 'pages/product';
