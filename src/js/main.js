@@ -52,21 +52,17 @@ function init() {
   
   // Product page modules
   if (document.querySelector('.product')) {
-    // 360° viewer
-    initViewer360('.viewer-360', {
+    initViewer360('.viewer360', {
       frameCount: 36,
-      imagePath: '/assets/products/vortex-shell'
+      imagePath: '/src/assets/images/products/vortex-shell',
     });
-    
-    // Accordion sections
+
     initAccordion('.accordion', {
-      allowMultiple: false
+      allowMultiple: false,
     });
-    
-    // Variant picker
-    const variantPicker = initVariantPicker('.variant-picker');
-    
-    // Add to cart validation
+
+    const variantPicker = initVariantPicker('.product__variants');
+
     const addToCartBtn = document.querySelector('[data-action="add-to-cart"]');
     if (addToCartBtn && variantPicker) {
       addToCartBtn.addEventListener('click', (e) => {

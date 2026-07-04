@@ -39,6 +39,19 @@
   // Font families
   --font-display: 'Anton', 'Archivo Expanded', system-ui, sans-serif;  // Kinetic headings
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;  // Labels, chips, technical data
+
+  // Neutral scale (maps to surface system)
+  --neutral-300: #c4c4c7;
+  --neutral-400: var(--color-text-muted);
+  --neutral-500: #6b6b6e;
+  --neutral-600: #4a4a4d;
+  --neutral-700: #353436;
+  --neutral-800: var(--color-border);
+  --neutral-900: var(--color-surface);
+
+  // Hairline border (design system)
+  --hairline: 1px solid rgba(255, 255, 255, 0.1);
   
   // Font sizes (fluid with clamp)
   --font-xs: 0.75rem;    // 12px
@@ -85,7 +98,21 @@
   --container-max: 1440px;
   --container-padding: var(--space-4);
   --radius: 1rem;       // 16px rounded corners
+  --radius-md: 0.75rem; // 12px
   --radius-sm: 0.5rem;  // 8px
+  --radius-xs: 0.25rem; // 4px
+  --radius-full: 9999px;
+
+  // Kinetic CTA glow
+  --shadow-volt-lg: 0 0 30px rgba(204, 255, 0, 0.15);
+  --shadow-lift-lg: var(--shadow-lift);
+
+  // Sale badge (collection cards)
+  --color-sale: #ffb4ab;
+  --color-sale-text: #690005;
+
+  // Easing alias
+  --ease-out: var(--ease-out-expo);
   
   // ============================================================================
   // Motion

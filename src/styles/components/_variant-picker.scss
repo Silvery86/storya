@@ -3,189 +3,171 @@
 // ============================================================================
 
 .variant-picker {
-  &__group {
-    margin-bottom: var(--space-6);
-    
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
   &__label {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: var(--font-display);
-    font-size: var(--font-sm);
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    margin: 0;
+
+    font-family: var(--font-mono);
+    font-size: var(--font-xs);
+    font-weight: 600;
+    line-height: 1.33;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--neutral-400);
-    margin-bottom: var(--space-3);
-    
-    .selected {
-      color: var(--light);
-      margin-left: var(--space-2);
-    }
+    color: var(--muted);
   }
-  
+
   &__value {
     color: var(--light);
   }
-  
+
   &__guide {
-    font-size: var(--font-sm);
-    font-weight: 700;
+    font-family: var(--font-mono);
+    font-size: var(--font-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--neutral-400);
-    text-decoration: none;
-    transition: color 0.2s var(--ease-out);
-    
+    color: var(--light);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(255, 255, 255, 0.2);
+    transition: color var(--duration-fast) var(--ease-out-expo),
+                text-decoration-color var(--duration-fast) var(--ease-out-expo);
+
     &:hover {
       color: var(--volt);
+      text-decoration-color: var(--volt);
     }
-    
+
     &:focus-visible {
       outline: 2px solid var(--volt);
       outline-offset: 2px;
     }
   }
-  
-  // Color swatches
-  &__colors {
+
+  &__options {
     display: flex;
     flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  &__options--sizes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-3);
   }
-  
-  &__color-option {
-    position: relative;
-    
-    input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-    
-    label {
-      display: block;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 3px solid var(--neutral-700);
-      cursor: pointer;
-      
-      transition: all 0.2s var(--ease-out);
-      
-      &:hover {
-        transform: scale(1.1);
-        border-color: var(--neutral-500);
-      }
-    }
-    
-    // Selected state
-    input:checked + label {
-      border-color: var(--volt);
-      box-shadow: 0 0 0 2px var(--dark), 0 0 0 4px var(--volt);
-    }
-    
-    input:focus-visible + label {
-      outline: 2px solid var(--volt);
-      outline-offset: 4px;
-    }
-    
-    // Color backgrounds
-    &[data-color="black"] label { background: #1a1a1a; }
-    &[data-color="white"] label { background: #f5f5f5; }
-    &[data-color="volt"] label { background: var(--volt); }
-    &[data-color="blue"] label { background: var(--blue); }
-    &[data-color="grey"] label { background: #808080; }
-    &[data-color="red"] label { background: #ff4444; }
+}
+
+// ============================================================================
+// Color Swatch
+// ============================================================================
+
+.color-swatch {
+  position: relative;
+  display: inline-block;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
   }
-  
-  // Size chips
-  &__sizes {
+
+  &__visual {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    border: var(--hairline);
+    cursor: pointer;
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow var(--duration-fast) var(--ease-out-expo);
+  }
+
+  input:checked + &__visual {
+    box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--volt);
+  }
+
+  input:focus-visible + &__visual {
+    outline: 2px solid var(--volt);
+    outline-offset: 4px;
+  }
+
+  &:hover input:not(:checked) + &__visual {
+    box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--neutral-600);
+  }
+}
+
+// ============================================================================
+// Size Chip — pill buttons
+// ============================================================================
+
+.size-chip {
+  position: relative;
+  display: block;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__label {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: var(--space-3) 0;
+
+    font-family: var(--font-mono);
+    font-size: var(--font-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1;
+
+    background: var(--surface);
+    border: var(--hairline);
+    border-radius: var(--radius-full);
+    color: var(--light);
+    cursor: pointer;
+
+    transition: border-color var(--duration-fast) var(--ease-out-expo),
+                color var(--duration-fast) var(--ease-out-expo);
   }
-  
-  &__size-option {
-    position: relative;
-    
-    input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-    
-    label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 60px;
-      height: 44px;
-      padding: 0 var(--space-4);
-      
-      font-family: var(--font-display);
-      font-size: var(--font-sm);
-      font-weight: 700;
-      
-      background: var(--neutral-800);
-      border: 2px solid var(--neutral-700);
-      color: var(--neutral-300);
-      cursor: pointer;
-      
-      transition: all 0.2s var(--ease-out);
-      
-      &:hover {
-        border-color: var(--volt);
-        color: var(--volt);
-      }
-    }
-    
-    // Selected state
-    input:checked + label {
-      background: transparent;
-      border-color: var(--volt);
-      color: var(--volt);
-    }
-    
-    input:focus-visible + label {
-      outline: 2px solid var(--volt);
-      outline-offset: 2px;
-    }
-    
-    // Disabled/Out of stock
-    input:disabled + label {
-      opacity: 0.3;
-      cursor: not-allowed;
-      position: relative;
-      
-      &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 10%;
-        right: 10%;
-        height: 2px;
-        background: var(--neutral-600);
-        transform: rotate(-45deg);
-      }
-    }
+
+  &:hover input:not(:checked) + &__label {
+    border-color: var(--volt);
+    color: var(--volt);
+  }
+
+  input:checked + &__label {
+    border-color: var(--volt);
+    color: var(--volt);
+  }
+
+  input:focus-visible + &__label {
+    outline: 2px solid var(--volt);
+    outline-offset: 2px;
+  }
+
+  input:disabled + &__label {
+    opacity: 0.3;
+    cursor: not-allowed;
   }
 }
 
 // Reduced motion
 @media (prefers-reduced-motion: reduce) {
-  .variant-picker {
-    &__color-option label,
-    &__size-option label {
-      transition: none;
-    }
-    
-    &__color-option label:hover {
-      transform: none;
-    }
+  .variant-picker__guide,
+  .color-swatch__visual,
+  .size-chip__label {
+    transition: none;
   }
 }

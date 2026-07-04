@@ -1,6 +1,5 @@
 /**
- * Filter.js — Product filtering and sorting
- * Handles category filtering and price sorting on collection page
+ * Filter.js — Product filtering and sorting on the collection page
  */
 
 import { qs, qsa } from '../utils/dom.js';
@@ -8,237 +7,245 @@ import { qs, qsa } from '../utils/dom.js';
 class ProductFilter {
   constructor() {
     this.products = qsa('.product-card');
-    this.categoryChips = qsa('.filters__category-chip');
-    this.sortSelect = qs('.filters__sort-select');
-    this.resultsCount = qs('.collection__count');
+    this.categoryLinks = qsa('.filters__category-link');
+    this.sortRadios = qsa('.filters__sort-radio');
     this.filterToggle = qs('.filter-toggle');
     this.filterSidebar = qs('.collection__sidebar');
     this.filterBackdrop = qs('.filter-backdrop');
     this.filterClose = qs('.filters__close');
     this.resetButton = qs('.filters__reset');
-    
-    this.activeCategories = new Set();
-    this.currentSort = 'featured';
-    
+
+    this.activeCategory = null;
+    this.currentSort = 'newest';
+
     this.init();
   }
-  
+
   init() {
-    // Category filtering
-    this.categoryChips.forEach(chip => {
-      chip.addEventListener('click', this.handleCategoryToggle.bind(this));
+    this.categoryLinks.forEach((link) => {
+      link.addEventListener('click', this.handleCategoryClick.bind(this));
     });
-    
-    // Sorting
-    if (this.sortSelect) {
-      this.sortSelect.addEventListener('change', this.handleSortChange.bind(this));
-    }
-    
-    // Mobile filter toggle
+
+    this.sortRadios.forEach((radio) => {
+      radio.addEventListener('change', this.handleSortChange.bind(this));
+    });
+
     if (this.filterToggle) {
       this.filterToggle.addEventListener('click', this.openFilters.bind(this));
     }
-    
+
     if (this.filterBackdrop) {
       this.filterBackdrop.addEventListener('click', this.closeFilters.bind(this));
     }
-    
+
     if (this.filterClose) {
       this.filterClose.addEventListener('click', this.closeFilters.bind(this));
     }
-    
-    // Reset button
+
     if (this.resetButton) {
       this.resetButton.addEventListener('click', this.handleReset.bind(this));
     }
-    
-    // Check URL parameters for initial filters
+
+    this.syncSidebarA11y();
     this.applyURLParams();
-    
-    // Initial count update
-    this.updateResultsCount();
-    
-    console.log('Product filters initialized');
+    this.applyFilters();
+
+    window.addEventListener('resize', () => this.syncSidebarA11y());
   }
-  
+
+  syncSidebarA11y() {
+    if (!this.filterSidebar) return;
+
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
+    if (isDesktop) {
+      this.filterSidebar.classList.remove('is-open');
+      this.filterSidebar.setAttribute('aria-hidden', 'false');
+      this.filterBackdrop?.classList.remove('is-visible');
+      document.body.style.overflow = '';
+    } else if (!this.filterSidebar.classList.contains('is-open')) {
+      this.filterSidebar.setAttribute('aria-hidden', 'true');
+    }
+  }
+
   applyURLParams() {
     const params = new URLSearchParams(window.location.search);
     const category = params.get('category');
-    
+    const sort = params.get('sort');
+
     if (category) {
-      // Find and activate the category chip
-      const chip = Array.from(this.categoryChips).find(
-        c => c.dataset.category === category
-      );
-      
-      if (chip) {
-        this.activeCategories.add(category);
-        chip.classList.add('is-active');
-        chip.setAttribute('aria-pressed', 'true');
+      this.setActiveCategory(category);
+    }
+
+    if (sort) {
+      this.currentSort = sort;
+      const radio = Array.from(this.sortRadios).find((r) => r.value === sort);
+
+      if (radio) {
+        radio.checked = true;
+      }
+    } else {
+      const checked = Array.from(this.sortRadios).find((r) => r.checked);
+      if (checked) {
+        this.currentSort = checked.value;
       }
     }
-    
-    // Apply filters
-    this.applyFilters();
   }
-  
-  handleCategoryToggle(event) {
-    const chip = event.currentTarget;
-    const category = chip.dataset.category;
-    
-    // Toggle active state
-    if (this.activeCategories.has(category)) {
-      this.activeCategories.delete(category);
-      chip.classList.remove('is-active');
-      chip.setAttribute('aria-pressed', 'false');
+
+  setActiveCategory(category) {
+    this.activeCategory = category;
+
+    this.categoryLinks.forEach((link) => {
+      const isActive = link.dataset.category === category;
+      link.classList.toggle('is-active', isActive);
+      link.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  }
+
+  handleCategoryClick(event) {
+    event.preventDefault();
+
+    const link = event.currentTarget;
+    const category = link.dataset.category;
+
+    // Toggle off if already active (show all)
+    if (this.activeCategory === category) {
+      this.activeCategory = null;
+      this.categoryLinks.forEach((item) => {
+        item.classList.remove('is-active');
+        item.setAttribute('aria-current', 'false');
+      });
+      this.updateURL(null);
     } else {
-      this.activeCategories.add(category);
-      chip.classList.add('is-active');
-      chip.setAttribute('aria-pressed', 'true');
+      this.setActiveCategory(category);
+      this.updateURL(category);
     }
-    
+
     this.applyFilters();
+
+    if (window.matchMedia('(max-width: 1023px)').matches) {
+      this.closeFilters();
+    }
   }
-  
+
+  updateURL(category) {
+    const url = new URL(window.location.href);
+
+    if (category) {
+      url.searchParams.set('category', category);
+    } else {
+      url.searchParams.delete('category');
+    }
+
+    window.history.replaceState({}, '', url);
+  }
+
   handleSortChange(event) {
     this.currentSort = event.target.value;
     this.applySort();
   }
-  
+
   handleReset() {
-    // Clear all filters
-    this.activeCategories.clear();
-    
-    // Reset chips
-    this.categoryChips.forEach(chip => {
-      chip.classList.remove('is-active');
-      chip.setAttribute('aria-pressed', 'false');
+    this.activeCategory = null;
+    this.currentSort = 'newest';
+
+    this.categoryLinks.forEach((link) => {
+      link.classList.remove('is-active');
+      link.setAttribute('aria-current', 'false');
     });
-    
-    // Reset sort
-    this.currentSort = 'featured';
-    if (this.sortSelect) {
-      this.sortSelect.value = 'featured';
-    }
-    
-    // Apply
+
+    this.sortRadios.forEach((radio) => {
+      radio.checked = radio.value === 'newest';
+    });
+
+    this.updateURL(null);
     this.applyFilters();
   }
-  
+
   applyFilters() {
-    let visibleCount = 0;
-    
-    this.products.forEach(product => {
+    this.products.forEach((product) => {
       const productCategory = product.dataset.category;
-      
-      // If no filters active, show all
-      if (this.activeCategories.size === 0) {
-        product.classList.remove('is-hidden');
-        visibleCount++;
-      } else {
-        // Show if product matches any active category
-        if (this.activeCategories.has(productCategory)) {
-          product.classList.remove('is-hidden');
-          visibleCount++;
-        } else {
-          product.classList.add('is-hidden');
-        }
-      }
+      const matches =
+        !this.activeCategory || productCategory === this.activeCategory;
+
+      product.classList.toggle('is-hidden', !matches);
     });
-    
-    this.updateResultsCount(visibleCount);
+
     this.applySort();
   }
-  
+
   applySort() {
-    // Get visible products
+    const grid = this.products[0]?.parentElement;
+    if (!grid) return;
+
     const visibleProducts = Array.from(this.products).filter(
-      p => !p.classList.contains('is-hidden')
+      (product) => !product.classList.contains('is-hidden')
     );
-    
-    // Sort products
+
     visibleProducts.sort((a, b) => {
       const priceA = parseFloat(a.dataset.price);
       const priceB = parseFloat(b.dataset.price);
-      
+      const orderA = parseInt(a.dataset.order || '0', 10);
+      const orderB = parseInt(b.dataset.order || '0', 10);
+
       switch (this.currentSort) {
         case 'price-low':
           return priceA - priceB;
         case 'price-high':
           return priceB - priceA;
-        case 'featured':
+        case 'newest':
         default:
-          // Keep original order (featured)
-          return 0;
+          return orderA - orderB;
       }
     });
-    
-    // Re-append products in new order
-    const grid = this.products[0]?.parentElement;
-    if (grid) {
-      visibleProducts.forEach(product => {
-        grid.appendChild(product);
-      });
-    }
+
+    visibleProducts.forEach((product) => {
+      grid.appendChild(product);
+    });
   }
-  
-  updateResultsCount(count) {
-    if (!this.resultsCount) return;
-    
-    const total = count !== undefined ? count : this.products.length;
-    const text = total === 1 ? '1 product' : `${total} products`;
-    
-    this.resultsCount.textContent = text;
-  }
-  
+
   openFilters() {
     if (this.filterSidebar) {
       this.filterSidebar.classList.add('is-open');
       this.filterSidebar.setAttribute('aria-hidden', 'false');
     }
-    
+
     if (this.filterBackdrop) {
       this.filterBackdrop.classList.add('is-visible');
     }
-    
-    // Prevent body scroll on mobile
+
     document.body.style.overflow = 'hidden';
-    
-    // Focus first filter
-    const firstChip = this.categoryChips[0];
-    if (firstChip) {
-      firstChip.focus();
+
+    const firstLink = this.categoryLinks[0];
+    if (firstLink) {
+      firstLink.focus();
     }
   }
-  
+
   closeFilters() {
     if (this.filterSidebar) {
       this.filterSidebar.classList.remove('is-open');
       this.filterSidebar.setAttribute('aria-hidden', 'true');
     }
-    
+
     if (this.filterBackdrop) {
       this.filterBackdrop.classList.remove('is-visible');
     }
-    
-    // Restore body scroll
+
     document.body.style.overflow = '';
-    
-    // Return focus to toggle button
+
     if (this.filterToggle) {
       this.filterToggle.focus();
     }
   }
 }
 
-// Auto-initialize on collection page
 export function initFilter() {
   if (!document.querySelector('.collection')) {
     return null;
   }
-  
+
   return new ProductFilter();
 }
 
-// Export class for manual instantiation
 export { ProductFilter };

@@ -3,26 +3,228 @@
     {
       "id": "aero-knit",
       "name": "Aero Knit",
-      "category": "Tops",
+      "category": "tops",
       "price": 89,
-      "image": "/src/assets/images/products/aero-knit.png",
-      "description": "Lightweight performance tee with moisture-wicking technology"
+      "image": "/src/assets/images/products/aero-knit.jpg",
+      "description": "Lightweight mesh knit tee engineered for maximum breathability during high-intensity training.",
+      "features": [
+        "Laser-cut ventilation zones",
+        "Moisture-wicking fabric",
+        "Anti-odor treatment",
+        "Reflective details"
+      ],
+      "badge": null
     },
     {
       "id": "kinetic-compression",
       "name": "Kinetic Compression",
-      "category": "Tops",
+      "category": "tops",
       "price": 95,
-      "image": "/src/assets/images/products/kinetic-compression.png",
-      "description": "Compression top for enhanced muscle support"
+      "image": "/src/assets/images/products/kinetic-compression.jpg",
+      "description": "Compression top with targeted muscle support for enhanced performance and faster recovery.",
+      "features": [
+        "Graduated compression zones",
+        "4-way stretch fabric",
+        "Flatlock seams",
+        "UPF 50+ sun protection"
+      ],
+      "badge": "NEW"
     },
     {
       "id": "volt-singlet",
       "name": "Volt Singlet",
-      "category": "Tops",
+      "category": "tops",
       "price": 65,
-      "image": "/src/assets/images/products/volt-singlet.png",
-      "description": "Ultra-light running singlet for maximum breathability"
+      "image": "/src/assets/images/products/volt-singlet.jpg",
+      "description": "Minimalist running singlet with zero-distraction fit for race day performance.",
+      "features": [
+        "Ultra-lightweight construction",
+        "Seamless sides",
+        "Quick-dry fabric",
+        "Dropped back hem"
+      ],
+      "badge": null
+    },
+    {
+      "id": "aero-tights",
+      "name": "Aero Tights",
+      "category": "bottoms",
+      "price": 120,
+      "originalPrice": 160,
+      "image": "/src/assets/images/products/aero-tights.jpg",
+      "description": "Aerodynamic compression tights with strategic ventilation for peak performance.",
+      "features": [
+        "Wind-resistant panels",
+        "Reflective branding",
+        "Secure zip pocket",
+        "Ankle zippers"
+      ],
+      "badge": "SALE"
+    },
+    {
+      "id": "strata-pant",
+      "name": "Strata Pant",
+      "category": "bottoms",
+      "price": 135,
+      "image": "/src/assets/images/products/strata-pant.jpg",
+      "description": "Technical training pant with tapered fit and advanced stretch for unrestricted movement.",
+      "features": [
+        "Water-resistant finish",
+        "Articulated knees",
+        "Zip pockets",
+        "Adjustable hem"
+      ],
+      "badge": null
+    },
+    {
+      "id": "velocity-shorts",
+      "name": "Velocity Shorts",
+      "category": "bottoms",
+      "price": 75,
+      "image": "/src/assets/images/products/velocity-shorts.jpg",
+      "description": "Lightweight training shorts with built-in brief and secure storage for essentials.",
+      "features": [
+        "Split hem design",
+        "Internal drawcord",
+        "Back zip pocket",
+        "Breathable liner"
+      ],
+      "badge": null
+    },
+    {
+      "id": "strata-wind",
+      "name": "Strata Wind",
+      "category": "outerwear",
+      "price": 185,
+      "image": "/src/assets/images/products/strata-wind.jpg",
+      "description": "Wind-blocking jacket with 360° visibility for early morning and evening runs.",
+      "features": [
+        "Windproof front panel",
+        "Breathable back mesh",
+        "Reflective graphics",
+        "Packable design"
+      ],
+      "badge": null
+    },
+    {
+      "id": "thermo-shield",
+      "name": "Thermo Shield",
+      "category": "outerwear",
+      "price": 210,
+      "image": "/src/assets/images/products/thermo-shield.jpg",
+      "description": "Insulated jacket with synthetic down alternative for cold-weather training.",
+      "features": [
+        "PrimaLoft® insulation",
+        "Water-resistant shell",
+        "Secure zip pockets",
+        "Adjustable hood"
+      ],
+      "badge": null
+    },
+    {
+      "id": "vortex-shell",
+      "name": "Vortex Shell",
+      "category": "outerwear",
+      "price": 245,
+      "image": "/src/assets/images/products/vortex-shell.jpg",
+      "description": "Premium waterproof jacket with 3-layer construction for all-weather protection.",
+      "features": [
+        "20,000mm waterproof rating",
+        "Laser-perforated vents",
+        "Packable chest pocket",
+        "Articulated sleeves"
+      ],
+      "badge": null
+    },
+    {
+      "id": "apex-trail",
+      "name": "Apex Trail",
+      "category": "shoes",
+      "price": 180,
+      "image": "/src/assets/images/products/apex-trail.jpg",
+      "description": "Rugged trail running shoe with aggressive traction and responsive cushioning.",
+      "features": [
+        "Vibram® Megagrip outsole",
+        "Rock plate protection",
+        "Waterproof upper",
+        "Gaiter attachment"
+      ],
+      "badge": null
+    },
+    {
+      "id": "kinetic-carbon-r1",
+      "name": "Kinetic Carbon R1",
+      "category": "shoes",
+      "price": 245,
+      "image": "/src/assets/images/products/kinetic-carbon-r1.jpg",
+      "description": "Carbon-plated racing shoe designed for elite performance and personal records.",
+      "features": [
+        "Full-length carbon plate",
+        "PEBA foam midsole",
+        "40mm stack height",
+        "Race-day geometry"
+      ],
+      "badge": "NEW"
+    },
+    {
+      "id": "v-strike-pro",
+      "name": "V-Strike Pro",
+      "category": "shoes",
+      "price": 195,
+      "image": "/src/assets/images/products/v-strike-pro.jpg",
+      "description": "Versatile training shoe with stability features for high-mileage workouts.",
+      "features": [
+        "Dual-density midsole",
+        "Reinforced heel counter",
+        "Breathable engineered mesh",
+        "Durable rubber outsole"
+      ],
+      "badge": null
+    },
+    {
+      "id": "apex-backpack",
+      "name": "Apex Backpack",
+      "category": "accessories",
+      "price": 125,
+      "image": "/src/assets/images/products/apex-backpack.jpg",
+      "description": "Technical training pack with dedicated shoe compartment and hydration compatibility.",
+      "features": [
+        "25L capacity",
+        "Shoe garage",
+        "Hydration sleeve",
+        "Multiple pockets"
+      ],
+      "badge": null
+    },
+    {
+      "id": "hydro-cap",
+      "name": "Hydro Cap",
+      "category": "accessories",
+      "price": 35,
+      "image": "/src/assets/images/products/hydro-cap.jpg",
+      "description": "Lightweight performance cap with sweat-wicking band and laser ventilation.",
+      "features": [
+        "Moisture-wicking band",
+        "Laser-cut vents",
+        "Reflective logo",
+        "Adjustable strap"
+      ],
+      "badge": null
+    },
+    {
+      "id": "kinetic-bottle",
+      "name": "Kinetic Bottle",
+      "category": "accessories",
+      "price": 28,
+      "image": "/src/assets/images/products/kinetic-bottle.jpg",
+      "description": "Insulated stainless steel bottle that keeps drinks cold for 24 hours.",
+      "features": [
+        "Double-wall insulation",
+        "650ml capacity",
+        "Leak-proof lid",
+        "Wide mouth opening"
+      ],
+      "badge": null
     }
   ]
 }

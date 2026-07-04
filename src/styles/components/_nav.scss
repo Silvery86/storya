@@ -128,7 +128,9 @@
     
     // Active state
     &--active {
-      color: var(--color-volt);
+      color: var(--color-text);
+      border-bottom: 2px solid var(--color-volt);
+      padding-bottom: calc(var(--space-2) - 2px);
     }
   }
   

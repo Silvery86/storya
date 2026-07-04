@@ -78,7 +78,6 @@
             <li class="nav__item"><a href="/collection.html?category=bottoms" class="nav__link">Bottoms</a></li>
             <li class="nav__item"><a href="/collection.html?category=outerwear" class="nav__link">Outerwear</a></li>
             <li class="nav__item"><a href="/collection.html?category=shoes" class="nav__link">Shoes</a></li>
-            <li class="nav__item"><a href="/collection.html?category=accessories" class="nav__link">Accessories</a></li>
           </ul>
         </nav>
         
@@ -96,9 +95,9 @@
   <main id="main-content" role="main">
     <div class="container">
       <div class="product">
-        
+
         <!-- Breadcrumb -->
-        <nav class="breadcrumb" aria-label="Breadcrumb">
+        <nav class="breadcrumb" aria-label="Breadcrumb" hidden>
           <ol class="breadcrumb__list">
             <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
             <li class="breadcrumb__item"><a href="/collection.html" class="breadcrumb__link">Collection</a></li>
@@ -108,127 +107,131 @@
         </nav>
         
         <div class="product__layout">
-          
+
           <!-- Product Gallery -->
           <div class="product__gallery">
-            <!-- 360° Viewer -->
-            <div class="viewer360" id="viewer360" role="img" aria-label="360° product view of Vortex Shell jacket. Use arrow keys or drag to rotate.">
-              <span class="viewer360__badge">360° VIEW</span>
+            <div
+              class="viewer360"
+              id="viewer360"
+              tabindex="0"
+              role="img"
+              aria-label="360° product view of Vortex Shell jacket. Drag or use arrow keys to rotate."
+            >
+              <span class="viewer360__badge">
+                <svg class="viewer360__badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 4a8 8 0 1 1-7.07 4.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 4v4h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                360° VIEW
+              </span>
               <div class="viewer360__container">
-                <img 
-                  src="/src/assets/images/products/vortex-shell/frame-01.jpg" 
-                  alt="Vortex Shell jacket view" 
+                <img
+                  src="/src/assets/images/products/vortex-shell/frame-01.jpg"
+                  alt="Vortex Shell jacket, front view"
                   class="viewer360__image"
                   id="viewer360-image"
                 >
-                <div class="viewer360__controls" aria-hidden="true">
-                  <button class="viewer360__button" data-action="rotate-left" aria-label="Rotate left">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <div class="viewer360__controls">
+                  <button class="viewer360__button" type="button" data-action="rotate-left" aria-label="Rotate left">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2"/>
                     </svg>
                   </button>
-                  <button class="viewer360__button" data-action="rotate-right" aria-label="Rotate right">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <button class="viewer360__button" type="button" data-action="rotate-right" aria-label="Rotate right">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2"/>
                     </svg>
                   </button>
                 </div>
-                <p class="viewer360__hint">Drag to rotate · Arrow keys supported</p>
+                <p class="viewer360__hint">Drag to rotate. Arrow keys supported.</p>
               </div>
             </div>
-            
-            <!-- Thumbnail Gallery -->
+
             <div class="thumbnails" role="tablist" aria-label="Product images">
-              <button class="thumbnail thumbnail--active" role="tab" aria-selected="true" aria-controls="viewer360" data-frame="01">
+              <button class="thumbnail thumbnail--active" type="button" role="tab" aria-selected="true" aria-controls="viewer360" data-frame="01">
                 <img src="/src/assets/images/products/vortex-shell/thumb-01.jpg" alt="Front view" class="thumbnail__image">
               </button>
-              <button class="thumbnail" role="tab" aria-selected="false" aria-controls="viewer360" data-frame="09">
-                <img src="/src/assets/images/products/vortex-shell/thumb-09.jpg" alt="Side view" class="thumbnail__image">
+              <button class="thumbnail" type="button" role="tab" aria-selected="false" aria-controls="viewer360" data-frame="09">
+                <img src="/src/assets/images/products/vortex-shell/thumb-09.jpg" alt="Detail view" class="thumbnail__image">
               </button>
-              <button class="thumbnail" role="tab" aria-selected="false" aria-controls="viewer360" data-frame="17">
+              <button class="thumbnail" type="button" role="tab" aria-selected="false" aria-controls="viewer360" data-frame="17">
                 <img src="/src/assets/images/products/vortex-shell/thumb-17.jpg" alt="Back view" class="thumbnail__image">
               </button>
-              <button class="thumbnail" role="tab" aria-selected="false" aria-controls="viewer360" data-frame="25">
-                <img src="/src/assets/images/products/vortex-shell/thumb-25.jpg" alt="Detail view" class="thumbnail__image">
+              <button class="thumbnail thumbnail--video" type="button" role="tab" aria-selected="false" aria-label="Play product video" data-video>
+                <svg class="thumbnail__play" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M10 8.5v7l6-3.5-6-3.5z" fill="currentColor"/>
+                </svg>
               </button>
             </div>
           </div>
-          
+
           <!-- Product Info -->
           <div class="product__info">
             <header class="product__header">
-              <h1 class="product__title">Vortex Shell</h1>
-              <p class="product__category">Outerwear</p>
-              
-              <!-- Rating -->
               <div class="product__rating">
                 <div class="rating" role="img" aria-label="Rated 4.8 out of 5 stars">
-                  <svg class="rating__stars" width="120" height="24" viewBox="0 0 120 24" aria-hidden="true">
+                  <svg class="rating__stars" width="90" height="18" viewBox="0 0 90 18" aria-hidden="true">
                     <use href="#star-filled" x="0"/>
-                    <use href="#star-filled" x="24"/>
-                    <use href="#star-filled" x="48"/>
-                    <use href="#star-filled" x="72"/>
-                    <use href="#star-partial" x="96"/>
+                    <use href="#star-filled" x="18"/>
+                    <use href="#star-filled" x="36"/>
+                    <use href="#star-filled" x="54"/>
+                    <use href="#star-partial" x="72"/>
                   </svg>
-                  <svg style="display:none">
-                    <symbol id="star-filled" viewBox="0 0 24 24">
-                      <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  <svg style="display:none" aria-hidden="true">
+                    <symbol id="star-filled" viewBox="0 0 18 18">
+                      <path fill="currentColor" d="M9 1.5l2.32 4.7 5.18.75-3.75 3.65.89 5.16L9 13.33l-4.64 2.43.89-5.16L1.5 6.95l5.18-.75L9 1.5z"/>
                     </symbol>
-                    <symbol id="star-partial" viewBox="0 0 24 24">
+                    <symbol id="star-partial" viewBox="0 0 18 18">
                       <defs>
-                        <linearGradient id="half">
+                        <linearGradient id="star-half">
                           <stop offset="50%" stop-color="currentColor"/>
-                          <stop offset="50%" stop-color="#2a2a2d" stop-opacity="1"/>
+                          <stop offset="50%" stop-color="#2a2a2d"/>
                         </linearGradient>
                       </defs>
-                      <path fill="url(#half)" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      <path fill="url(#star-half)" d="M9 1.5l2.32 4.7 5.18.75-3.75 3.65.89 5.16L9 13.33l-4.64 2.43.89-5.16L1.5 6.95l5.18-.75L9 1.5z"/>
                     </symbol>
                   </svg>
                 </div>
-                <a href="#reviews" class="product__reviews-link">127 reviews</a>
+                <span class="product__reviews-count">4.8 (127 REVIEWS)</span>
               </div>
-              
-              <!-- Price -->
-              <p class="product__price">$245</p>
+
+              <h1 class="product__title">Vortex Shell</h1>
+              <p class="product__price">$245.00</p>
             </header>
-            
-            <!-- Variant Pickers -->
+
             <div class="product__variants">
-              <!-- Color Picker -->
-              <div class="variant-picker">
-                <h2 class="variant-picker__label">Color: <span class="variant-picker__value">Volt Black</span></h2>
+              <div class="variant-picker" data-variant="color">
+                <p class="variant-picker__label" id="color-label">
+                  Color: <span class="variant-picker__value">Black/Volt</span>
+                </p>
                 <div class="variant-picker__options" role="radiogroup" aria-labelledby="color-label">
-                  <label class="color-swatch color-swatch--selected">
-                    <input type="radio" name="color" value="volt-black" checked aria-label="Volt Black">
-                    <span class="color-swatch__visual" style="background: linear-gradient(135deg, #ccff00 0%, #0a0a0b 100%)"></span>
+                  <label class="color-swatch">
+                    <input type="radio" name="color" value="black-volt" checked aria-label="Black/Volt">
+                    <span class="color-swatch__visual" style="background: #0a0a0b"></span>
                   </label>
                   <label class="color-swatch">
-                    <input type="radio" name="color" value="pure-white" aria-label="Pure White">
-                    <span class="color-swatch__visual" style="background: #f5f5f5"></span>
+                    <input type="radio" name="color" value="slate" aria-label="Slate">
+                    <span class="color-swatch__visual" style="background: #334155"></span>
                   </label>
                   <label class="color-swatch">
                     <input type="radio" name="color" value="electric-blue" aria-label="Electric Blue">
-                    <span class="color-swatch__visual" style="background: #2e6bff"></span>
+                    <span class="color-swatch__visual" style="background: #2563eb"></span>
                   </label>
                 </div>
               </div>
-              
-              <!-- Size Picker -->
-              <div class="variant-picker">
-                <h2 class="variant-picker__label">
-                  <span>Size</span>
+
+              <div class="variant-picker" data-variant="size">
+                <p class="variant-picker__label" id="size-label">
+                  <span>Select Size</span>
                   <a href="#size-guide" class="variant-picker__guide">Size Guide</a>
-                </h2>
-                <div class="variant-picker__options" role="radiogroup" aria-labelledby="size-label">
-                  <label class="size-chip">
-                    <input type="radio" name="size" value="xs" aria-label="Size XS">
-                    <span class="size-chip__label">XS</span>
-                  </label>
+                </p>
+                <div class="variant-picker__options variant-picker__options--sizes" role="radiogroup" aria-labelledby="size-label">
                   <label class="size-chip">
                     <input type="radio" name="size" value="s" aria-label="Size S">
                     <span class="size-chip__label">S</span>
                   </label>
-                  <label class="size-chip size-chip--selected">
+                  <label class="size-chip">
                     <input type="radio" name="size" value="m" checked aria-label="Size M">
                     <span class="size-chip__label">M</span>
                   </label>
@@ -240,25 +243,18 @@
                     <input type="radio" name="size" value="xl" aria-label="Size XL">
                     <span class="size-chip__label">XL</span>
                   </label>
-                  <label class="size-chip">
-                    <input type="radio" name="size" value="xxl" aria-label="Size XXL">
-                    <span class="size-chip__label">XXL</span>
-                  </label>
                 </div>
               </div>
             </div>
-            
-            <!-- Add to Cart -->
-            <button class="button button--primary button--large product__add-to-cart" type="button">
-              Add to Cart — $245
+
+            <button class="button button--primary product__add-to-cart" type="button" data-action="add-to-cart">
+              ADD TO CART
             </button>
-            
-            <!-- Accordion Details -->
+
             <div class="accordion" id="product-details">
-              <!-- Description -->
               <div class="accordion__item">
                 <h3 class="accordion__heading">
-                  <button class="accordion__trigger" aria-expanded="true" aria-controls="description-panel" id="description-trigger">
+                  <button class="accordion__trigger" type="button" aria-expanded="true" aria-controls="description-panel" id="description-trigger">
                     <span>Description</span>
                     <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -267,49 +263,15 @@
                 </h3>
                 <div class="accordion__panel" id="description-panel" role="region" aria-labelledby="description-trigger">
                   <div class="accordion__content">
-                    <p>The Vortex Shell is engineered for athletes who refuse to let weather slow them down. Our advanced 3-layer waterproof fabric keeps you dry while maintaining breathability during intense activity.</p>
-                    <ul>
-                      <li>3-layer waterproof protection (20,000mm)</li>
-                      <li>Laser-perforated ventilation zones</li>
-                      <li>Adjustable hood with peripheral vision</li>
-                      <li>Reflective details for low-light visibility</li>
-                      <li>Packable into chest pocket</li>
-                    </ul>
+                    <p>The Vortex Shell is engineered for optimal aerodynamics and breathability. Laser-cut ventilation and a kinetic-fit design move seamlessly with your body during high-intensity runs.</p>
                   </div>
                 </div>
               </div>
-              
-              <!-- Sizing -->
+
               <div class="accordion__item">
                 <h3 class="accordion__heading">
-                  <button class="accordion__trigger" aria-expanded="false" aria-controls="sizing-panel" id="sizing-trigger">
-                    <span>Sizing & Fit</span>
-                    <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
-                    </svg>
-                  </button>
-                </h3>
-                <div class="accordion__panel" id="sizing-panel" role="region" aria-labelledby="sizing-trigger" hidden>
-                  <div class="accordion__content">
-                    <p>Athletic fit designed to layer over base and mid layers.</p>
-                    <p><strong>Model is 6'1" / 185cm, wearing size M</strong></p>
-                    <ul>
-                      <li>XS: Chest 34-36"</li>
-                      <li>S: Chest 36-38"</li>
-                      <li>M: Chest 38-40"</li>
-                      <li>L: Chest 40-42"</li>
-                      <li>XL: Chest 42-44"</li>
-                      <li>XXL: Chest 44-46"</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Shipping -->
-              <div class="accordion__item">
-                <h3 class="accordion__heading">
-                  <button class="accordion__trigger" aria-expanded="false" aria-controls="shipping-panel" id="shipping-trigger">
-                    <span>Shipping & Returns</span>
+                  <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="shipping-panel" id="shipping-trigger">
+                    <span>Shipping &amp; Returns</span>
                     <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
                     </svg>
@@ -317,18 +279,14 @@
                 </h3>
                 <div class="accordion__panel" id="shipping-panel" role="region" aria-labelledby="shipping-trigger" hidden>
                   <div class="accordion__content">
-                    <p><strong>Free shipping on orders over $100</strong></p>
-                    <p>Standard shipping: 3-5 business days</p>
-                    <p>Express shipping: 1-2 business days</p>
-                    <p>Free returns within 60 days. Item must be unworn with tags attached.</p>
+                    <p>Free priority shipping on all orders over $100. 30-day return policy for unused gear in original packaging.</p>
                   </div>
                 </div>
               </div>
-              
-              <!-- Care -->
+
               <div class="accordion__item">
                 <h3 class="accordion__heading">
-                  <button class="accordion__trigger" aria-expanded="false" aria-controls="care-panel" id="care-trigger">
+                  <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="care-panel" id="care-trigger">
                     <span>Care Instructions</span>
                     <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -337,22 +295,81 @@
                 </h3>
                 <div class="accordion__panel" id="care-panel" role="region" aria-labelledby="care-trigger" hidden>
                   <div class="accordion__content">
-                    <ul>
-                      <li>Machine wash cold on gentle cycle</li>
-                      <li>Do not bleach or use fabric softener</li>
-                      <li>Tumble dry low or hang dry</li>
-                      <li>Do not iron</li>
-                      <li>Do not dry clean</li>
-                    </ul>
+                    <p>Machine wash cold with like colors. Do not use fabric softeners. Tumble dry low. Do not iron over reflective details.</p>
                   </div>
                 </div>
               </div>
             </div>
-            
           </div>
-          
+
         </div>
-        
+
+        <!-- Complete The Look Section -->
+        <section class="complete-look" aria-labelledby="complete-look-heading">
+          <h2 id="complete-look-heading" class="complete-look__heading">COMPLETE THE LOOK</h2>
+
+          <div class="complete-look__grid">
+
+            <article class="complete-look__item">
+              <a href="/product.html?id=aero-tights" class="complete-look__link">
+                <div class="complete-look__media">
+                  <img src="/src/assets/images/products/aero-tights.jpg" alt="Aero Tights" class="complete-look__image" loading="lazy">
+                </div>
+                <div class="complete-look__content">
+                  <div class="complete-look__meta">
+                    <h3 class="complete-look__title">AERO TIGHTS</h3>
+                    <p class="complete-look__price">$85.00</p>
+                  </div>
+                </div>
+              </a>
+              <button type="button" class="complete-look__add" aria-label="Add Aero Tights to cart">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </article>
+
+            <article class="complete-look__item">
+              <a href="/product.html?id=kinetic-compression" class="complete-look__link">
+                <div class="complete-look__media">
+                  <img src="/src/assets/images/products/kinetic-compression.jpg" alt="Kinetic Compression" class="complete-look__image" loading="lazy">
+                </div>
+                <div class="complete-look__content">
+                  <div class="complete-look__meta">
+                    <h3 class="complete-look__title">KINETIC COMPRESSION</h3>
+                    <p class="complete-look__price">$160.00</p>
+                  </div>
+                </div>
+              </a>
+              <button type="button" class="complete-look__add" aria-label="Add Kinetic Compression to cart">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </article>
+
+            <article class="complete-look__item">
+              <a href="/product.html?id=volt-singlet" class="complete-look__link">
+                <div class="complete-look__media">
+                  <img src="/src/assets/images/products/volt-singlet.jpg" alt="Volt Singlet" class="complete-look__image" loading="lazy">
+                </div>
+                <div class="complete-look__content">
+                  <div class="complete-look__meta">
+                    <h3 class="complete-look__title">VOLT SINGLET</h3>
+                    <p class="complete-look__price">$45.00</p>
+                  </div>
+                </div>
+              </a>
+              <button type="button" class="complete-look__add" aria-label="Add Volt Singlet to cart">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </article>
+
+          </div>
+        </section>
+
       </div>
     </div>
   </main>
@@ -363,7 +380,7 @@
       <div class="sticky-cart__inner">
         <div class="sticky-cart__info">
           <p class="sticky-cart__title">Vortex Shell</p>
-          <p class="sticky-cart__price">$245</p>
+          <p class="sticky-cart__price">$245.00</p>
         </div>
         <button class="button button--primary sticky-cart__button" type="button">Add to Cart</button>
       </div>
@@ -388,7 +405,6 @@
             <li><a href="/collection.html?category=bottoms" class="footer__link">Bottoms</a></li>
             <li><a href="/collection.html?category=outerwear" class="footer__link">Outerwear</a></li>
             <li><a href="/collection.html?category=shoes" class="footer__link">Shoes</a></li>
-            <li><a href="/collection.html?category=accessories" class="footer__link">Accessories</a></li>
           </ul>
         </div>
         

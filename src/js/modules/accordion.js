@@ -3,7 +3,7 @@
  * Implements ARIA-compliant accordion with keyboard navigation
  */
 
-import { qsa } from '../utils/dom.js';
+import { qs, qsa } from '../utils/dom.js';
 
 class Accordion {
   constructor(element, config = {}) {
@@ -18,37 +18,37 @@ class Accordion {
     this.init();
   }
   
+  getPanel(trigger) {
+    const panelId = trigger.getAttribute('aria-controls');
+    if (panelId) {
+      const byId = document.getElementById(panelId);
+      if (byId) return byId;
+    }
+
+    const item = trigger.closest('.accordion__item');
+    return item ? qs('.accordion__panel', item) : trigger.nextElementSibling;
+  }
+
   init() {
-    // Set initial ARIA attributes
-    this.triggers.forEach((trigger, index) => {
-      const panel = trigger.nextElementSibling;
+    this.triggers.forEach((trigger) => {
+      const panel = this.getPanel(trigger);
+      if (!panel) return;
+
       const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-      
-      // Set IDs for ARIA
-      const triggerId = `accordion-trigger-${index}`;
-      const panelId = `accordion-panel-${index}`;
-      
-      trigger.id = triggerId;
-      trigger.setAttribute('aria-controls', panelId);
-      
-      panel.id = panelId;
-      panel.setAttribute('aria-labelledby', triggerId);
-      
-      // Set initial state
+
       if (!isExpanded) {
         panel.setAttribute('aria-hidden', 'true');
+        panel.hidden = true;
         panel.style.maxHeight = '0';
       } else {
         panel.setAttribute('aria-hidden', 'false');
+        panel.hidden = false;
         panel.style.maxHeight = `${panel.scrollHeight}px`;
       }
-      
-      // Bind events
+
       trigger.addEventListener('click', this.handleClick.bind(this));
       trigger.addEventListener('keydown', this.handleKeydown.bind(this));
     });
-    
-    console.log('Accordion initialized');
   }
   
   handleClick(event) {
@@ -101,23 +101,30 @@ class Accordion {
   }
   
   expand(trigger) {
-    const panel = trigger.nextElementSibling;
-    
+    const panel = this.getPanel(trigger);
+    if (!panel) return;
+
     trigger.setAttribute('aria-expanded', 'true');
     panel.setAttribute('aria-hidden', 'false');
-    
-    // Animate height
+    panel.hidden = false;
     panel.style.maxHeight = `${panel.scrollHeight}px`;
   }
-  
+
   collapse(trigger) {
-    const panel = trigger.nextElementSibling;
-    
+    const panel = this.getPanel(trigger);
+    if (!panel) return;
+
     trigger.setAttribute('aria-expanded', 'false');
     panel.setAttribute('aria-hidden', 'true');
-    
-    // Animate height
     panel.style.maxHeight = '0';
+
+    const onEnd = () => {
+      if (trigger.getAttribute('aria-expanded') === 'false') {
+        panel.hidden = true;
+      }
+      panel.removeEventListener('transitionend', onEnd);
+    };
+    panel.addEventListener('transitionend', onEnd);
   }
   
   collapseAll() {
