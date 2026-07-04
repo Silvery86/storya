@@ -1,9 +1,10 @@
 /**
- * Testimonials Carousel
+ * Testimonials Carousel (3D Layered)
  * 
  * Features:
- * - Slide navigation with prev/next buttons
- * - Dot indicators for direct navigation
+ * - 3D perspective transforms with depth layering
+ * - Card stacking effect (prev/next visible in background)
+ * - Smooth rotateY transitions
  * - Keyboard support (arrow keys)
  * - Auto-play with pause on hover
  * - Touch/swipe support
@@ -36,6 +37,9 @@ class TestimonialsCarousel {
   init() {
     if (!this.track || this.totalItems === 0) return;
     
+    // Set track height based on tallest item
+    this.setTrackHeight();
+    
     // Button events
     this.prevBtn?.addEventListener('click', () => this.prev());
     this.nextBtn?.addEventListener('click', () => this.next());
@@ -65,6 +69,17 @@ class TestimonialsCarousel {
     this.updateCarousel();
   }
   
+  setTrackHeight() {
+    // Find tallest item and set track height
+    let maxHeight = 0;
+    this.items.forEach(item => {
+      const height = item.offsetHeight;
+      if (height > maxHeight) maxHeight = height;
+    });
+    this.track.style.height = `${maxHeight + 100}px`; // +100 for 3D depth
+    this.track.style.position = 'relative';
+  }
+  
   prev() {
     this.currentIndex = (this.currentIndex - 1 + this.totalItems) % this.totalItems;
     this.updateCarousel();
@@ -84,18 +99,39 @@ class TestimonialsCarousel {
   }
   
   updateCarousel() {
-    // Move track
-    const offset = -this.currentIndex * 100;
-    this.track.style.transform = `translateX(${offset}%)`;
+    const prevIndex = (this.currentIndex - 1 + this.totalItems) % this.totalItems;
+    const nextIndex = (this.currentIndex + 1) % this.totalItems;
+    
+    // Update all items with 3D classes
+    this.items.forEach((item, index) => {
+      // Remove all state classes
+      item.classList.remove('is-active', 'is-prev', 'is-next', 'is-exit-left', 'is-exit-right');
+      
+      if (index === this.currentIndex) {
+        // Active slide (center, front)
+        item.classList.add('is-active');
+      } else if (index === prevIndex) {
+        // Previous slide (left, background)
+        item.classList.add('is-prev');
+      } else if (index === nextIndex) {
+        // Next slide (right, background)
+        item.classList.add('is-next');
+      } else {
+        // Other slides (hidden far back)
+        const diff = index - this.currentIndex;
+        if (diff < 0 || (diff > this.totalItems / 2)) {
+          item.classList.add('is-exit-left');
+        } else {
+          item.classList.add('is-exit-right');
+        }
+      }
+    });
     
     // Update dots
     this.dots.forEach((dot, index) => {
       const isActive = index === this.currentIndex;
       dot.setAttribute('aria-selected', isActive);
     });
-    
-    // Update button states (optional: disable at ends if not looping)
-    // Currently set to loop, so always enabled
   }
   
   handleKeydown(e) {
