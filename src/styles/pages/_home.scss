@@ -1105,4 +1105,86 @@
   .stats__number {
     transition: none;
   }
+  
+  // Testimonials: Disable 3D transforms and animations
+  .testimonials {
+    &__carousel {
+      perspective: none;
+    }
+    
+    &__track {
+      transform-style: flat;
+    }
+    
+    &__item {
+      transform: translateX(-50%) !important;
+      opacity: 0 !important;
+      filter: none !important;
+      transition: opacity 0.3s ease !important;
+      
+      &.is-active {
+        opacity: 1 !important;
+      }
+    }
+    
+    &__avatar {
+      animation: none !important;
+    }
+    
+    &__heading,
+    &__quote {
+      text-shadow: none;
+    }
+    
+    .star--filled {
+      animation: none !important;
+    }
+  }
+  
+  // Newsletter: Disable all animations
+  .newsletter {
+    &::before,
+    &::after {
+      animation: none;
+    }
+    
+    &__wrapper {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    
+    &__title {
+      animation: none !important;
+      background: var(--light);
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: unset;
+      background-clip: unset;
+      filter: none;
+    }
+    
+    &__description,
+    &__form {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    
+    &__input:focus {
+      transform: none;
+    }
+    
+    .button {
+      animation: none !important;
+      
+      &::before {
+        display: none;
+      }
+    }
+    
+    &__message {
+      animation: none !important;
+    }
+  }
 }
+
