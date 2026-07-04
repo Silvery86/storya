@@ -1,0 +1,76 @@
+// ============================================================================
+// Thumbnails Component
+// ============================================================================
+
+.thumbnails {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  overflow-x: auto;
+  padding: var(--space-2) 0;
+  
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--neutral-900);
+    border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--neutral-700);
+    border-radius: 3px;
+    
+    &:hover {
+      background: var(--volt);
+    }
+  }
+}
+
+.thumbnail {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  
+  background: var(--neutral-900);
+  border: 2px solid var(--neutral-700);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  overflow: hidden;
+  
+  transition: border-color 0.2s var(--ease-out);
+  
+  &:hover {
+    border-color: var(--neutral-600);
+  }
+  
+  &:focus-visible {
+    outline: 2px solid var(--volt);
+    outline-offset: 2px;
+  }
+  
+  &--active {
+    border-color: var(--volt);
+    
+    &:hover {
+      border-color: var(--volt);
+    }
+  }
+  
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .thumbnail {
+    transition: none;
+  }
+}
