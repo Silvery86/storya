@@ -21,6 +21,17 @@
   --color-danger: #ff4444;      // Sale badges, errors
   --color-success: #00cc66;     // Success states
   
+  // Shorthand aliases (for convenience)
+  --volt: var(--color-volt);
+  --blue: var(--color-blue);
+  --dark: var(--color-bg);
+  --light: var(--color-text);
+  --surface: var(--color-surface);
+  --border: var(--color-border);
+  --muted: var(--color-text-muted);
+  --danger: var(--color-danger);
+  --success: var(--color-success);
+  
   // ============================================================================
   // Typography
   // ============================================================================
