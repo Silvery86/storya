@@ -20,9 +20,10 @@
 @forward 'components/nav';
 @forward 'components/button';
 @forward 'components/product-card';
+@forward 'components/filters';
 // ... more as we build
 
 // 5. Pages (page-specific styles)
 @forward 'pages/home';
-// @forward 'pages/collection';
+@forward 'pages/collection';
 // @forward 'pages/product';

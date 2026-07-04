@@ -59,7 +59,301 @@
   </header>
   
   <!-- Main Content -->
-  <main id="main-content" role="main">
+  <main id="main-content" role="main" class="collection">
+    <div class="container">
+      
+      <!-- Page Header -->
+      <div class="collection__header">
+        <h1>Collection</h1>
+        <p>Premium performance sportswear engineered for athletes.</p>
+      </div>
+      
+      <!-- Mobile Filter Toggle -->
+      <button class="filter-toggle button button--secondary">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.5 5H17.5M5 10H15M7.5 15H12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Filters
+      </button>
+      
+      <!-- Layout: Sidebar + Main -->
+      <div class="collection__layout">
+        
+        <!-- Filters Sidebar -->
+        <aside class="collection__sidebar" aria-label="Product filters" aria-hidden="true">
+          <div class="filters">
+            <div class="filters__header">
+              <h2>Filters</h2>
+              <button class="filters__close" aria-label="Close filters">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="filters__section">
+              <h3 class="filters__section-title">Category</h3>
+              <div class="filters__categories">
+                <button class="filters__category-chip" data-category="tops" aria-pressed="false">Tops</button>
+                <button class="filters__category-chip" data-category="bottoms" aria-pressed="false">Bottoms</button>
+                <button class="filters__category-chip" data-category="outerwear" aria-pressed="false">Outerwear</button>
+                <button class="filters__category-chip" data-category="shoes" aria-pressed="false">Shoes</button>
+                <button class="filters__category-chip" data-category="accessories" aria-pressed="false">Accessories</button>
+              </div>
+            </div>
+            
+            <!-- Sort Filter -->
+            <div class="filters__section">
+              <h3 class="filters__section-title">Sort By</h3>
+              <div class="filters__sort">
+                <label for="sort-select" class="visually-hidden">Sort products by</label>
+                <select id="sort-select" class="filters__sort-select">
+                  <option value="featured">Featured</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Reset Button -->
+            <button class="filters__reset button button--ghost">Reset Filters</button>
+          </div>
+        </aside>
+        
+        <!-- Main Product Area -->
+        <div class="collection__main">
+          
+          <!-- Results Bar -->
+          <div class="collection__results-bar">
+            <p class="collection__count">15 products</p>
+          </div>
+          
+          <!-- Product Grid -->
+          <div class="collection__grid">
+            
+            <!-- Product 1: Aero Knit -->
+            <a href="/product.html?id=aero-knit" class="product-card" data-tilt data-category="tops" data-price="85">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/aero-knit.jpg" alt="Aero Knit running top" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Tops</p>
+                <h3 class="product-card__name">Aero Knit</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$85</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 2: Kinetic Compression -->
+            <a href="/product.html?id=kinetic-compression" class="product-card" data-tilt data-category="tops" data-price="95">
+              <div class="product-card__image">
+                <span class="product-card__badge">New</span>
+                <img src="/src/assets/images/products/kinetic-compression.jpg" alt="Kinetic Compression top" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Tops</p>
+                <h3 class="product-card__name">Kinetic Compression</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$95</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 3: Pulse Tech -->
+            <a href="/product.html?id=pulse-tech" class="product-card" data-tilt data-category="tops" data-price="75">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/pulse-tech.jpg" alt="Pulse Tech performance top" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Tops</p>
+                <h3 class="product-card__name">Pulse Tech</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$75</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 4: Aero Tights -->
+            <a href="/product.html?id=aero-tights" class="product-card" data-tilt data-category="bottoms" data-price="120">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/aero-tights.jpg" alt="Aero Tights running tights" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Bottoms</p>
+                <h3 class="product-card__name">Aero Tights</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$120</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 5: Kinetic Shorts -->
+            <a href="/product.html?id=kinetic-shorts" class="product-card" data-tilt data-category="bottoms" data-price="65">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/kinetic-shorts.jpg" alt="Kinetic Shorts training shorts" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Bottoms</p>
+                <h3 class="product-card__name">Kinetic Shorts</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$65</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 6: Performance Joggers -->
+            <a href="/product.html?id=performance-joggers" class="product-card" data-tilt data-category="bottoms" data-price="95">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/performance-joggers.jpg" alt="Performance Joggers" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Bottoms</p>
+                <h3 class="product-card__name">Performance Joggers</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$95</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 7: Vortex Shell -->
+            <a href="/product.html?id=vortex-shell" class="product-card" data-tilt data-category="outerwear" data-price="245">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/vortex-shell.jpg" alt="Vortex Shell waterproof jacket" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Outerwear</p>
+                <h3 class="product-card__name">Vortex Shell</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$245</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 8: Storm Vest -->
+            <a href="/product.html?id=storm-vest" class="product-card" data-tilt data-category="outerwear" data-price="165">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/storm-vest.jpg" alt="Storm Vest insulated vest" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Outerwear</p>
+                <h3 class="product-card__name">Storm Vest</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$165</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 9: Windbreak Hoodie -->
+            <a href="/product.html?id=windbreak-hoodie" class="product-card" data-tilt data-category="outerwear" data-price="135">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/windbreak-hoodie.jpg" alt="Windbreak Hoodie" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Outerwear</p>
+                <h3 class="product-card__name">Windbreak Hoodie</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$135</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 10: Kinetic Carbon R1 -->
+            <a href="/product.html?id=kinetic-carbon-r1" class="product-card" data-tilt data-category="shoes" data-price="245">
+              <div class="product-card__image">
+                <span class="product-card__badge">New</span>
+                <img src="/src/assets/images/products/kinetic-carbon-r1.jpg" alt="Kinetic Carbon R1 running shoes" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Shoes</p>
+                <h3 class="product-card__name">Kinetic Carbon R1</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$245</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 11: Trail Max -->
+            <a href="/product.html?id=trail-max" class="product-card" data-tilt data-category="shoes" data-price="185">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/trail-max.jpg" alt="Trail Max trail running shoes" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Shoes</p>
+                <h3 class="product-card__name">Trail Max</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$185</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 12: Velocity Trainer -->
+            <a href="/product.html?id=velocity-trainer" class="product-card" data-tilt data-category="shoes" data-price="155">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/velocity-trainer.jpg" alt="Velocity Trainer cross-training shoes" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Shoes</p>
+                <h3 class="product-card__name">Velocity Trainer</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$155</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 13: Kinetic Cap -->
+            <a href="/product.html?id=kinetic-cap" class="product-card" data-tilt data-category="accessories" data-price="35">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/kinetic-cap.jpg" alt="Kinetic Cap performance cap" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Accessories</p>
+                <h3 class="product-card__name">Kinetic Cap</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$35</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 14: Performance Socks -->
+            <a href="/product.html?id=performance-socks" class="product-card" data-tilt data-category="accessories" data-price="25">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/performance-socks.jpg" alt="Performance Socks" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Accessories</p>
+                <h3 class="product-card__name">Performance Socks</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$25</span>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Product 15: Kinetic Bottle -->
+            <a href="/product.html?id=kinetic-bottle" class="product-card" data-tilt data-category="accessories" data-price="45">
+              <div class="product-card__image">
+                <img src="/src/assets/images/products/kinetic-bottle.jpg" alt="Kinetic Bottle insulated water bottle" loading="lazy">
+              </div>
+              <div class="product-card__content">
+                <p class="product-card__category">Accessories</p>
+                <h3 class="product-card__name">Kinetic Bottle</h3>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">$45</span>
+                </div>
+              </div>
+            </a>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Filter Backdrop (Mobile) -->
+    <div class="filter-backdrop"></div>
+    
+  </main>
     <div class="container">
       <div class="collection">
         

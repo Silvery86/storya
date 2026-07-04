@@ -6,6 +6,7 @@ import { initNav } from './modules/nav.js';
 import { initTilt } from './modules/tilt.js';
 import { initCountUp } from './modules/countUp.js';
 import { initNewsletter } from './modules/newsletter.js';
+import { initFilter } from './modules/filter.js';
 
 console.log('STYORA initialized');
 
@@ -31,6 +32,15 @@ function init() {
     
     // Newsletter form validation
     initNewsletter('#newsletter-form');
+  }
+  
+  // Collection page modules
+  if (document.querySelector('.collection')) {
+    // Product filtering and sorting
+    initFilter();
+    
+    // 3D tilt on product cards
+    initTilt('[data-tilt]');
   }
   
   console.log('All modules loaded');
