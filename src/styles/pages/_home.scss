@@ -836,14 +836,8 @@
     margin: 0 auto;
     text-align: center;
     
-    // Initial hidden state for scroll animation
-    opacity: 0;
-    transform: translateY(40px);
-    
-    // Will be triggered by IntersectionObserver
-    &.is-visible {
-      animation: newsletter-fade-up 0.8s var(--ease-out) forwards;
-    }
+    // No initial hidden state on wrapper - let children animate individually
+    // (Wrapper is just a container, children handle their own entrance)
   }
   
   &__title {
