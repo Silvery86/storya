@@ -210,20 +210,105 @@
       </div>
     </section>
     
-    <!-- Testimonial -->
-    <section class="testimonial" aria-labelledby="testimonial-heading">
+    <!-- Testimonials Carousel -->
+    <section class="testimonials" aria-labelledby="testimonials-heading">
       <div class="container">
-        <div class="testimonial__wrapper">
-          <h2 id="testimonial-heading" class="visually-hidden">Athlete Testimonial</h2>
-          <blockquote class="testimonial__quote">
-            STYORA gear has transformed my training. The performance and comfort are unmatched.
-          </blockquote>
-          <div class="testimonial__author">
-            <img src="/src/assets/images/avatar-sarah.jpg" alt="Sarah Chen" class="testimonial__avatar" width="60" height="60">
-            <div class="testimonial__info">
-              <p class="testimonial__name">Sarah Chen</p>
-              <p class="testimonial__title">Professional Marathon Runner</p>
+        <h2 id="testimonials-heading" class="testimonials__heading">What Athletes Say</h2>
+        
+        <div class="testimonials__carousel" data-testimonials-carousel>
+          <div class="testimonials__track">
+            
+            <!-- Testimonial 1 -->
+            <div class="testimonials__item">
+              <blockquote class="testimonials__quote">
+                STYORA gear has transformed my training. The performance and comfort are unmatched. Every run feels effortless.
+              </blockquote>
+              <div class="testimonials__author">
+                <img src="/src/assets/images/avatar-sarah.jpg" alt="Sarah Chen" class="testimonials__avatar" width="60" height="60" loading="lazy">
+                <div class="testimonials__info">
+                  <p class="testimonials__name">Sarah Chen</p>
+                  <p class="testimonials__title">Professional Marathon Runner</p>
+                </div>
+              </div>
             </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonials__item">
+              <blockquote class="testimonials__quote">
+                The Kinetic Carbon R1 gave me the edge I needed. Shaved 3 minutes off my personal best in the first race.
+              </blockquote>
+              <div class="testimonials__author">
+                <img src="/src/assets/images/products/kinetic-carbon-r1.jpg" alt="Marcus Thompson" class="testimonials__avatar" width="60" height="60" loading="lazy">
+                <div class="testimonials__info">
+                  <p class="testimonials__name">Marcus Thompson</p>
+                  <p class="testimonials__title">Ultra-Marathon Champion</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="testimonials__item">
+              <blockquote class="testimonials__quote">
+                Finally found gear that keeps up with my intensity. The durability and breathability are exceptional.
+              </blockquote>
+              <div class="testimonials__author">
+                <img src="/src/assets/images/products/aero-tights.jpg" alt="Elena Rodriguez" class="testimonials__avatar" width="60" height="60" loading="lazy">
+                <div class="testimonials__info">
+                  <p class="testimonials__name">Elena Rodriguez</p>
+                  <p class="testimonials__title">CrossFit Athlete</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 4 -->
+            <div class="testimonials__item">
+              <blockquote class="testimonials__quote">
+                The Vortex Shell kept me dry and comfortable through a 50K trail race in monsoon conditions. Game changer.
+              </blockquote>
+              <div class="testimonials__author">
+                <img src="/src/assets/images/products/vortex-shell.jpg" alt="James Park" class="testimonials__avatar" width="60" height="60" loading="lazy">
+                <div class="testimonials__info">
+                  <p class="testimonials__name">James Park</p>
+                  <p class="testimonials__title">Trail Running Specialist</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 5 -->
+            <div class="testimonials__item">
+              <blockquote class="testimonials__quote">
+                As a coach, I recommend STYORA to all my athletes. The quality-to-performance ratio is unbeatable.
+              </blockquote>
+              <div class="testimonials__author">
+                <img src="/src/assets/images/products/kinetic-compression.jpg" alt="Coach Amanda Liu" class="testimonials__avatar" width="60" height="60" loading="lazy">
+                <div class="testimonials__info">
+                  <p class="testimonials__name">Amanda Liu</p>
+                  <p class="testimonials__title">Olympic Running Coach</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- Navigation -->
+          <button class="testimonials__nav testimonials__nav--prev" aria-label="Previous testimonial">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="testimonials__nav testimonials__nav--next" aria-label="Next testimonial">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          
+          <!-- Indicators -->
+          <div class="testimonials__indicators" role="tablist" aria-label="Testimonial navigation">
+            <button class="testimonials__dot" role="tab" aria-label="Testimonial 1" aria-selected="true"></button>
+            <button class="testimonials__dot" role="tab" aria-label="Testimonial 2"></button>
+            <button class="testimonials__dot" role="tab" aria-label="Testimonial 3"></button>
+            <button class="testimonials__dot" role="tab" aria-label="Testimonial 4"></button>
+            <button class="testimonials__dot" role="tab" aria-label="Testimonial 5"></button>
           </div>
         </div>
       </div>

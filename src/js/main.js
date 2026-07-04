@@ -6,6 +6,7 @@ import { initNav } from './modules/nav.js';
 import { initTilt } from './modules/tilt.js';
 import { initCountUp } from './modules/countUp.js';
 import { initNewsletter } from './modules/newsletter.js';
+import { initTestimonials } from './modules/testimonials.js';
 import { initFilter } from './modules/filter.js';
 import { initAccordion } from './modules/accordion.js';
 import { initVariantPicker } from './modules/variantPicker.js';
@@ -35,6 +36,9 @@ function init() {
     
     // Newsletter form validation
     initNewsletter('#newsletter-form');
+    
+    // Testimonials carousel
+    initTestimonials();
   }
   
   // Collection page modules
