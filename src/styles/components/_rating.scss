@@ -1,0 +1,23 @@
+// ============================================================================
+// Rating Component
+// ============================================================================
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  
+  &__stars {
+    display: flex;
+    color: var(--volt);
+    
+    use {
+      fill: currentColor;
+    }
+  }
+  
+  &__count {
+    margin-left: var(--space-2);
+    font-size: var(--font-sm);
+    color: var(--neutral-400);
+  }
+}

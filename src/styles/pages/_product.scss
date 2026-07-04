@@ -96,6 +96,7 @@
     font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 900;
+    font-style: italic;
     color: var(--light);
     line-height: 1.1;
     margin-bottom: var(--space-3);
@@ -104,30 +105,36 @@
   &__rating {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-3);
     margin-bottom: var(--space-4);
     
-    .stars {
-      display: flex;
-      gap: var(--space-1);
-      
-      svg {
-        width: 16px;
-        height: 16px;
-        fill: var(--volt);
+    .rating {
+      &__stars {
+        color: var(--volt);
       }
     }
+  }
+  
+  &__reviews-link {
+    font-size: var(--font-sm);
+    color: var(--neutral-400);
+    text-decoration: none;
+    transition: color 0.2s var(--ease-out);
     
-    .count {
-      font-size: var(--font-sm);
-      color: var(--neutral-400);
+    &:hover {
+      color: var(--volt);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid var(--volt);
+      outline-offset: 2px;
     }
   }
   
   &__price {
     font-family: var(--font-display);
-    font-size: var(--font-3xl);
-    font-weight: 900;
+    font-size: var(--font-2xl);
+    font-weight: 700;
     color: var(--volt);
   }
   
