@@ -794,37 +794,111 @@
 }
 
 // ============================================================================
-// Newsletter Section
+// Newsletter Section (Animated)
 // ============================================================================
 
 .newsletter {
   padding: var(--space-16) 0;
-  background: var(--neutral-900);
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+  
+  // Animated background gradient
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(204, 255, 0, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(46, 107, 255, 0.06) 0%, transparent 50%);
+    animation: newsletter-bg-shift 10s ease-in-out infinite;
+  }
+  
+  // Floating particles
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(2px 2px at 20% 40%, rgba(204, 255, 0, 0.3), transparent),
+      radial-gradient(2px 2px at 60% 70%, rgba(204, 255, 0, 0.2), transparent),
+      radial-gradient(3px 3px at 80% 20%, rgba(46, 107, 255, 0.3), transparent),
+      radial-gradient(2px 2px at 40% 80%, rgba(204, 255, 0, 0.2), transparent);
+    background-size: 200% 200%;
+    animation: newsletter-particles 20s linear infinite;
+    opacity: 0.4;
+  }
   
   &__wrapper {
-    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
     margin: 0 auto;
     text-align: center;
+    
+    // Initial hidden state for scroll animation
+    opacity: 0;
+    transform: translateY(40px);
+    
+    // Will be triggered by IntersectionObserver
+    &.is-visible {
+      animation: newsletter-fade-up 0.8s var(--ease-out) forwards;
+    }
   }
   
   &__title {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 900;
+    text-transform: uppercase;
     color: var(--light);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+    
+    // Animated gradient text
+    background: linear-gradient(
+      135deg,
+      var(--light) 0%,
+      var(--volt) 50%,
+      var(--light) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    // Text glow
+    filter: drop-shadow(0 0 20px rgba(204, 255, 0, 0.3));
+    
+    .is-visible & {
+      animation: 
+        newsletter-title-slide 0.8s var(--ease-out) 0.2s forwards,
+        newsletter-gradient-shift 8s linear infinite;
+    }
   }
   
   &__description {
-    font-size: var(--font-md);
-    color: var(--neutral-400);
-    margin-bottom: var(--space-6);
+    font-size: var(--font-lg);
+    color: var(--muted);
+    margin-bottom: var(--space-8);
+    line-height: 1.6;
+    
+    .is-visible & {
+      animation: newsletter-fade-up 0.8s var(--ease-out) 0.4s forwards;
+      opacity: 0;
+    }
   }
   
   &__form {
     display: flex;
     gap: var(--space-3);
-    margin-bottom: var(--space-4);
+    max-width: 500px;
+    margin: 0 auto var(--space-4);
+    
+    .is-visible & {
+      animation: newsletter-fade-up 0.8s var(--ease-out) 0.6s forwards;
+      opacity: 0;
+    }
     
     @media (max-width: 640px) {
       flex-direction: column;
@@ -833,46 +907,172 @@
   
   &__input {
     flex: 1;
-    padding: var(--space-4);
-    
-    font-family: var(--font-body);
-    font-size: var(--font-md);
-    
-    background: var(--neutral-800);
-    border: 2px solid var(--neutral-700);
+    padding: var(--space-4) var(--space-5);
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
     color: var(--light);
+    font-size: var(--font-base);
+    font-family: var(--font-body);
     
-    transition: border-color 0.2s var(--ease-out);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s var(--ease-out);
     
+    // Placeholder styling
     &::placeholder {
-      color: var(--neutral-500);
+      color: var(--muted);
+      transition: opacity 0.3s ease;
     }
     
+    // Focus state with glow
     &:focus {
       outline: none;
+      background: rgba(255, 255, 255, 0.08);
       border-color: var(--volt);
+      box-shadow: 
+        0 0 0 4px rgba(204, 255, 0, 0.1),
+        0 8px 24px rgba(204, 255, 0, 0.2);
+      transform: translateY(-2px);
+      
+      &::placeholder {
+        opacity: 0.5;
+      }
     }
     
+    // Invalid state
     &.has-error {
-      border-color: #ff4444;
+      border-color: var(--danger);
+      animation: newsletter-input-shake 0.4s ease;
     }
     
+    // Valid state
     &.is-valid {
-      border-color: #00ff88;
+      border-color: var(--success);
+    }
+  }
+  
+  .button {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    
+    // Shine effect on hover
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+      );
+      transition: left 0.5s ease;
+    }
+    
+    &:hover::before {
+      left: 100%;
+    }
+    
+    // Pulse animation on load
+    .is-visible & {
+      animation: newsletter-button-pulse 2s ease-in-out 1.5s infinite;
     }
   }
   
   &__message {
+    min-height: 24px;
     font-size: var(--font-sm);
-    min-height: 1.5em;
-    
-    &--error {
-      color: #ff4444;
-    }
     
     &--success {
-      color: #00ff88;
+      color: var(--success);
+      animation: newsletter-message-in 0.4s var(--ease-out);
     }
+    
+    &--error {
+      color: var(--danger);
+      animation: newsletter-message-in 0.4s var(--ease-out);
+    }
+  }
+  
+  // Mobile adjustments
+  @media (max-width: 768px) {
+    padding: var(--space-12) 0;
+  }
+}
+
+// Newsletter animations
+@keyframes newsletter-bg-shift {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5%, 5%);
+  }
+}
+
+@keyframes newsletter-particles {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes newsletter-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes newsletter-title-slide {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes newsletter-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes newsletter-button-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(204, 255, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(204, 255, 0, 0);
+  }
+}
+
+@keyframes newsletter-input-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+@keyframes newsletter-message-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

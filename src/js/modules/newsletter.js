@@ -1,6 +1,7 @@
 /**
- * Newsletter.js — Form validation and submission
+ * Newsletter.js — Form validation and submission + scroll animations
  * Validates email and handles form submission
+ * Triggers entrance animations on scroll into view
  */
 
 import { qs } from '../utils/dom.js';
@@ -17,6 +18,7 @@ class Newsletter {
     this.input = this.form.querySelector('input[type="email"]');
     this.button = this.form.querySelector('button[type="submit"]');
     this.messageContainer = this.form.querySelector('.newsletter__message');
+    this.wrapper = this.form.closest('.newsletter__wrapper');
     
     this.init();
   }
@@ -31,7 +33,41 @@ class Newsletter {
     // Clear error on focus
     this.input.addEventListener('focus', this.clearError.bind(this));
     
+    // Initialize scroll animation
+    this.initScrollAnimation();
+    
     console.log('Newsletter form initialized');
+  }
+  
+  initScrollAnimation() {
+    if (!this.wrapper) return;
+    
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+      // Skip animations, show immediately
+      this.wrapper.classList.add('is-visible');
+      return;
+    }
+    
+    // IntersectionObserver for scroll-triggered animation
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target); // Only animate once
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Trigger when 20% visible
+        rootMargin: '-50px' // Start slightly before entering viewport
+      }
+    );
+    
+    observer.observe(this.wrapper);
   }
   
   handleInput(event) {
