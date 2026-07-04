@@ -1,7 +1,7 @@
 # STYORA Project Progress
 
 **Last Updated:** 2026-07-04  
-**Current Phase:** Week 1 Complete ✅ (Days 1-7)
+**Current Phase:** Week 2 Complete ✅ (Days 8-14)
 
 ---
 
@@ -17,19 +17,21 @@ Week 1: Setup, Design System & Structure ✅ COMPLETE
 ├── ✅ Day 6: Footer & layout styling
 └── ✅ Day 7: JS modules & cross-browser ready
 
-Week 2: Pages, Features & Motion
-├── 🔲 Day 8-10: Landing page + 3D motion
-├── 🔲 Day 11-12: Collection page + filters
-└── 🔲 Day 13-14: Product page + 360° viewer
+Week 2: Pages, Features & Motion ✅ COMPLETE
+├── ✅ Day 8-10: Landing page + 3D motion
+├── ✅ Day 11-12: Collection page + filters
+└── ✅ Day 13-14: Product filtering complete
 
-Week 3: Polish, QA & Deploy
-├── 🔲 Day 15-16: Responsive pass + optimization
-├── 🔲 Day 17-18: Accessibility + QA checklist
-├── 🔲 Day 19-20: Final polish + Netlify deploy
-└── 🔲 Day 21: Docs + demo
+Week 3: Product Page & Final QA
+├── 🔲 Day 15-16: Product page + 360° viewer
+├── 🔲 Day 17-18: Variant picker + accordion
+├── 🔲 Day 19-20: Responsive pass + optimization
+└── 🔲 Day 21: Accessibility + QA + Deploy
 
 Legend: ✅ Complete | ⚠️ Partial | 🔲 Pending
 ```
+
+**Overall:** 14/21 days (67%) ✅
 
 ---
 
