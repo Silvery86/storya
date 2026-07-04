@@ -870,6 +870,10 @@
     // Text glow
     filter: drop-shadow(0 0 20px rgba(204, 255, 0, 0.3));
     
+    // Initial hidden state
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    
     .is-visible & {
       animation: 
         newsletter-title-slide 0.8s var(--ease-out) 0.2s forwards,
@@ -883,9 +887,12 @@
     margin-bottom: var(--space-8);
     line-height: 1.6;
     
+    // Initial hidden state
+    opacity: 0;
+    transform: translateY(40px);
+    
     .is-visible & {
       animation: newsletter-fade-up 0.8s var(--ease-out) 0.4s forwards;
-      opacity: 0;
     }
   }
   
@@ -895,9 +902,12 @@
     max-width: 500px;
     margin: 0 auto var(--space-4);
     
+    // Initial hidden state
+    opacity: 0;
+    transform: translateY(40px);
+    
     .is-visible & {
       animation: newsletter-fade-up 0.8s var(--ease-out) 0.6s forwards;
-      opacity: 0;
     }
     
     @media (max-width: 640px) {
