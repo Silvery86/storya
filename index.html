@@ -84,114 +84,127 @@
     <section class="hero" aria-labelledby="hero-heading">
       <div class="container">
         <div class="hero__content">
-          <h1 id="hero-heading" class="hero__heading">
-            <span class="hero__heading-line">Move</span>
-            <span class="hero__heading-line">Faster</span>
-          </h1>
-          <p class="hero__text">Premium performance sportswear engineered for athletes who demand more.</p>
-          <a href="/collection.html" class="button button--primary hero__cta">Shop Collection</a>
+          <p class="hero__eyebrow">Premium Performance</p>
+          <h1 id="hero-heading" class="hero__title">Move Faster</h1>
+          <p class="hero__description">Premium performance sportswear engineered for athletes who demand more.</p>
+          <div class="hero__cta">
+            <a href="/collection.html" class="button">Shop Collection</a>
+            <a href="#featured" class="button button--secondary">Explore Featured</a>
+          </div>
         </div>
-        <div class="hero__media" aria-hidden="true">
-          <!-- 3D hero visual will be added with CSS/JS -->
-        </div>
+        <div class="hero__scroll-indicator">Scroll</div>
       </div>
     </section>
     
     <!-- Brand Marquee -->
     <div class="marquee" aria-hidden="true">
-      <div class="marquee__inner">
+      <div class="marquee__track">
+        <!-- Duplicate for seamless loop -->
         <span class="marquee__item">Performance</span>
         <span class="marquee__item">Innovation</span>
         <span class="marquee__item">Speed</span>
         <span class="marquee__item">Endurance</span>
+        <span class="marquee__item">Kinetic</span>
+        <span class="marquee__item">Power</span>
+        <!-- Duplicate for seamless loop -->
         <span class="marquee__item">Performance</span>
         <span class="marquee__item">Innovation</span>
         <span class="marquee__item">Speed</span>
         <span class="marquee__item">Endurance</span>
+        <span class="marquee__item">Kinetic</span>
+        <span class="marquee__item">Power</span>
       </div>
     </div>
     
     <!-- Featured Products -->
-    <section class="featured" aria-labelledby="featured-heading">
+    <section id="featured" class="featured" aria-labelledby="featured-heading">
       <div class="container">
-        <h2 id="featured-heading" class="featured__heading">Featured</h2>
+        <div class="featured__header">
+          <p class="featured__eyebrow">New Arrivals</p>
+          <h2 id="featured-heading" class="featured__title">Featured Collection</h2>
+        </div>
         
-        <div class="product-grid">
+        <div class="featured__grid">
           <!-- Product Card 1 -->
-          <article class="product-card">
-            <a href="/product.html?id=kinetic-carbon-r1" class="product-card__link">
-              <div class="product-card__media">
-                <img src="/src/assets/images/products/kinetic-carbon-r1.jpg" alt="Kinetic Carbon R1 running shoes" class="product-card__image" loading="lazy">
+          <a href="/product.html?id=kinetic-carbon-r1" class="product-card" data-tilt>
+            <div class="product-card__image">
+              <span class="product-card__badge">New</span>
+              <img src="/src/assets/images/products/kinetic-carbon-r1.jpg" alt="Kinetic Carbon R1 running shoes" loading="lazy">
+            </div>
+            <div class="product-card__content">
+              <p class="product-card__category">Shoes</p>
+              <h3 class="product-card__name">Kinetic Carbon R1</h3>
+              <div class="product-card__price-wrapper">
+                <span class="product-card__price">$245</span>
               </div>
-              <div class="product-card__content">
-                <h3 class="product-card__title">Kinetic Carbon R1</h3>
-                <p class="product-card__category">Shoes</p>
-                <p class="product-card__price">$245</p>
-              </div>
-            </a>
-          </article>
+            </div>
+          </a>
           
           <!-- Product Card 2 -->
-          <article class="product-card">
-            <a href="/product.html?id=vortex-shell" class="product-card__link">
-              <div class="product-card__media">
-                <img src="/src/assets/images/products/vortex-shell.jpg" alt="Vortex Shell jacket" class="product-card__image" loading="lazy">
+          <a href="/product.html?id=vortex-shell" class="product-card" data-tilt>
+            <div class="product-card__image">
+              <img src="/src/assets/images/products/vortex-shell.jpg" alt="Vortex Shell jacket" loading="lazy">
+            </div>
+            <div class="product-card__content">
+              <p class="product-card__category">Outerwear</p>
+              <h3 class="product-card__name">Vortex Shell</h3>
+              <div class="product-card__price-wrapper">
+                <span class="product-card__price">$245</span>
               </div>
-              <div class="product-card__content">
-                <h3 class="product-card__title">Vortex Shell</h3>
-                <p class="product-card__category">Outerwear</p>
-                <p class="product-card__price">$245</p>
-              </div>
-            </a>
-          </article>
+            </div>
+          </a>
           
           <!-- Product Card 3 -->
-          <article class="product-card">
-            <a href="/product.html?id=kinetic-compression" class="product-card__link">
-              <div class="product-card__media">
-                <img src="/src/assets/images/products/kinetic-compression.jpg" alt="Kinetic Compression top" class="product-card__image" loading="lazy">
+          <a href="/product.html?id=kinetic-compression" class="product-card" data-tilt>
+            <div class="product-card__image">
+              <img src="/src/assets/images/products/kinetic-compression.jpg" alt="Kinetic Compression top" loading="lazy">
+            </div>
+            <div class="product-card__content">
+              <p class="product-card__category">Tops</p>
+              <h3 class="product-card__name">Kinetic Compression</h3>
+              <div class="product-card__price-wrapper">
+                <span class="product-card__price">$95</span>
               </div>
-              <div class="product-card__content">
-                <h3 class="product-card__title">Kinetic Compression</h3>
-                <p class="product-card__category">Tops</p>
-                <p class="product-card__price">$95</p>
-              </div>
-            </a>
-          </article>
+            </div>
+          </a>
           
           <!-- Product Card 4 -->
-          <article class="product-card">
-            <a href="/product.html?id=aero-tights" class="product-card__link">
-              <div class="product-card__media">
-                <img src="/src/assets/images/products/aero-tights.jpg" alt="Aero Tights" class="product-card__image" loading="lazy">
+          <a href="/product.html?id=aero-tights" class="product-card" data-tilt>
+            <div class="product-card__image">
+              <img src="/src/assets/images/products/aero-tights.jpg" alt="Aero Tights" loading="lazy">
+            </div>
+            <div class="product-card__content">
+              <p class="product-card__category">Bottoms</p>
+              <h3 class="product-card__name">Aero Tights</h3>
+              <div class="product-card__price-wrapper">
+                <span class="product-card__price">$120</span>
               </div>
-              <div class="product-card__content">
-                <h3 class="product-card__title">Aero Tights</h3>
-                <p class="product-card__category">Bottoms</p>
-                <p class="product-card__price">$120</p>
-              </div>
-            </a>
-          </article>
+            </div>
+          </a>
         </div>
       </div>
     </section>
     
-    <!-- Brand Story / Stats -->
+    <!-- Stats -->
     <section class="stats" aria-labelledby="stats-heading">
       <div class="container">
         <h2 id="stats-heading" class="visually-hidden">Performance Statistics</h2>
         <div class="stats__grid">
-          <div class="stat">
-            <p class="stat__value" data-count="50000">0</p>
-            <p class="stat__label">Athletes Trust Us</p>
+          <div class="stats__item">
+            <p class="stats__number" data-count="50000" data-count-suffix="+">0</p>
+            <p class="stats__label">Athletes Trust Us</p>
           </div>
-          <div class="stat">
-            <p class="stat__value" data-count="127">0</p>
-            <p class="stat__label">Countries Worldwide</p>
+          <div class="stats__item">
+            <p class="stats__number" data-count="127">0</p>
+            <p class="stats__label">Countries Worldwide</p>
           </div>
-          <div class="stat">
-            <p class="stat__value" data-count="98">0</p>
-            <p class="stat__label">Performance Rating</p>
+          <div class="stats__item">
+            <p class="stats__number" data-count="98" data-count-suffix="%">0</p>
+            <p class="stats__label">Performance Rating</p>
+          </div>
+          <div class="stats__item">
+            <p class="stats__number" data-count="15">0</p>
+            <p class="stats__label">Years Innovation</p>
           </div>
         </div>
       </div>
@@ -200,25 +213,30 @@
     <!-- Testimonial -->
     <section class="testimonial" aria-labelledby="testimonial-heading">
       <div class="container">
-        <blockquote class="testimonial__quote">
-          <p class="testimonial__text">"STYORA gear has transformed my training. The performance and comfort are unmatched."</p>
-          <footer class="testimonial__footer">
-            <cite class="testimonial__author">Sarah Chen</cite>
-            <p class="testimonial__title">Professional Marathon Runner</p>
-          </footer>
-        </blockquote>
+        <div class="testimonial__wrapper">
+          <h2 id="testimonial-heading" class="visually-hidden">Athlete Testimonial</h2>
+          <blockquote class="testimonial__quote">
+            STYORA gear has transformed my training. The performance and comfort are unmatched.
+          </blockquote>
+          <div class="testimonial__author">
+            <img src="/src/assets/images/avatar-sarah.jpg" alt="Sarah Chen" class="testimonial__avatar" width="60" height="60">
+            <div class="testimonial__info">
+              <p class="testimonial__name">Sarah Chen</p>
+              <p class="testimonial__title">Professional Marathon Runner</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     
     <!-- Newsletter -->
     <section class="newsletter" aria-labelledby="newsletter-heading">
       <div class="container">
-        <h2 id="newsletter-heading" class="newsletter__heading">Join the Movement</h2>
-        <p class="newsletter__text">Get early access to new releases, exclusive offers, and performance tips.</p>
-        
-        <form class="newsletter__form" aria-label="Newsletter signup form" novalidate>
-          <div class="newsletter__form-group">
-            <label for="newsletter-email" class="visually-hidden">Email address</label>
+        <div class="newsletter__wrapper">
+          <h2 id="newsletter-heading" class="newsletter__title">Join the Movement</h2>
+          <p class="newsletter__description">Get early access to new releases, exclusive offers, and performance tips.</p>
+          
+          <form id="newsletter-form" class="newsletter__form" novalidate>
             <input 
               type="email" 
               id="newsletter-email" 
@@ -226,13 +244,13 @@
               class="newsletter__input" 
               placeholder="Enter your email"
               required
-              aria-required="true"
-              aria-describedby="email-error"
+              aria-label="Email address"
             >
-            <span id="email-error" class="newsletter__error" role="alert" aria-live="polite"></span>
-          </div>
-          <button type="submit" class="button button--primary newsletter__submit">Subscribe</button>
-        </form>
+            <button type="submit" class="button">Subscribe</button>
+          </form>
+          
+          <div class="newsletter__message" role="status" aria-live="polite"></div>
+        </div>
       </div>
     </section>
     
